@@ -8,5 +8,5 @@ $resultado = mysqli_query($conexion,$query);
 while($row=$resultado->fetch_assoc()){
      $a=$row['aboutme'];
 }
-
+//a
 ?>
