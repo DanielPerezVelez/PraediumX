@@ -30,7 +30,7 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../js/animation.js"></script>
+                <script src="../../js/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
