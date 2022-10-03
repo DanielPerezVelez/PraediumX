@@ -56,13 +56,20 @@
                 </form>
 
                 <form id="formRegister" action="registerClient.php" method="POST" class="formulario_register">
+                    <!-- Formulario que contiene las input -->
                     <h2>Registrarse</h2>
                     <div>
+                        <!-- Div que contienen los input -->
                         <input required type="text" placeholder="Nombre(s)" class="registerNombreClass" name="registerNombres">
+                        <!-- input para nombre -->
                         <input required type="text" placeholder="Apellido(s)" class="registerApellidoClass" name="registerApellidos">
+                        <!-- input para apellido -->
                         <input required type="text" placeholder="Telefono" class="registerTelefonoClass" name="registerTelefono">
+                        <!-- input para telefono -->
                         <input required id="inputCorreoRe" type="text" placeholder="Correo" class="registerCorreoClass" name="registerCorreo">
+                        <!-- input para correo -->
                         <input required id="inputPasswordRe" type="password" placeholder="Contraseña" class="registerPasswordClass" name="registerPassword">
+                        <!-- input para contraseñaD -->
                     </div>
                     <br>
                     <h4>¿Qué desea hacer?</h4>
@@ -82,9 +89,12 @@
                             while($row=mysqli_fetch_array($query)){
                                 $idrolclt=$row['idrolclt'];
                                 $descripcion=$row['descripcion'];
+
+                                if($idrolclt==3 || $idrolclt==4){
                         ?>
-                                <option value="<?php echo $idrolclt ?>"><?php echo $descripcion?></option>
+                        <option value="<?php echo $idrolclt ?>"><?php echo $descripcion?></option>
                         <?php
+                                }
                             }
                         ?>
                     </select>

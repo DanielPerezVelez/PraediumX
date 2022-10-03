@@ -17,15 +17,15 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/app.css">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body id="page-top">
 <?php 
-    require_once("../conexion.php");
-    require_once("../funciones.php");
-    session_start();
+    require_once("php/conexion.php");
+    require_once("php/funciones.php");
+
     $id=$_SESSION['idcliente'];
     $nameClient=$_SESSION['nombres'];
     $profilePic=$_SESSION['profilepic'];
@@ -38,11 +38,11 @@
         <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon">
                     <i class="fa-solid fa-building"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">PRAEDIUM</div>
+                <div class="sidebar-brand-text mx-3">ADMIN</div>
             </a>
 
             <!-- Divider -->
@@ -50,7 +50,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="../../index.php">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tablero</span>
                 </a>
@@ -111,7 +111,7 @@
             </li>
                 <!-- Nav Item - Cerrar Sesion -->
             <li class="nav-item cerrar-sesion">
-                <a class="nav-link" href="../login-system/logoutClient.php" >
+                <a class="nav-link" href="php/login-system/logoutClient.php" >
                     <i class="fa-solid fa-xmark"></i>   
                     <span>Cerrar Sesion</span>
                 </a>
@@ -265,14 +265,14 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a href="../perfil-system/perfil.php" class="nav-link dropdown-toggle">
+                            <a href="php/perfil-system/perfil.php" class="nav-link dropdown-toggle">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <?php
                                     echo $nameClient;
                                     ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
-                                src="../../img/<?php echo $profilePic;?>">
+                                src="img/<?php echo $profilePic;?>">
                             </a>
                             <!-- Dropdown - User Information -->
                         </li>

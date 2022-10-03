@@ -1,6 +1,12 @@
 <?php
-
-include '../../templates/header.php';
+session_start();
+$rol=$_SESSION['rol'];
+if($rol==4){
+    include '../../../templates/headerVendedor.php';
+}
+if($rol==3){
+    include '../../../templates/headerComprador.php';
+}
 include '../../crud.php';
 ?>
 <div class="container h-100">
@@ -30,7 +36,7 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../js/animation.js"></script>
+                <script src="../../../js/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
@@ -51,7 +57,7 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../js/animation.js"></script>
+                <script src="../../../js/animation.js"></script>
             </div>
             
 
@@ -59,7 +65,7 @@ include '../../crud.php';
         <div class="tarjetapropiedad">
                 <div class="card">
                     <picture>
-                        <img src="/img/casa.jpg">
+                        <img src="../../../img/img-login-screen.jpg">
                     </picture>
                     <div class="contenido">
                         <h3><?php echo $a; ?></h3>
@@ -74,5 +80,5 @@ include '../../crud.php';
     </div>
 </div>
 <?php
-include '../../templates/footer.php';
+include '../../../templates/footer.php';
 ?>

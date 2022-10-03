@@ -65,11 +65,11 @@ if(!isset($_SESSION['usermail'])){
                         <i class="fa-solid fa-cart-shopping"></i>
                         <a>
                             <?php
-                                if($rol==1){
+                                if($rol==3){
                                     echo "Comprador";
                                 }else{
-                                    if($rol==2){
-                                        echo "Vendedor";
+                                    if($rol==4){
+                                        echo "Propietario";
                                     }
                                 }
                             ?>
