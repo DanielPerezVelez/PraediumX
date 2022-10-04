@@ -53,24 +53,31 @@ include '../../crud.php';
                 </div>
                 <script src="../js/animation.js"></script>
             </div>
-            
+
 
         </nav>
         <div class="tarjetapropiedad">
-                <div class="card">
-                    <picture>
-                        <img src="/img/casa.jpg">
-                    </picture>
-                    <div class="contenido">
-                        <h3><?php echo $a; ?></h3>
-                        <p><?php  ?></p>
-                        <p><?php  ?></p>
-                        <p><?php ?><p>
-                        <a href="#">Leer Más</a>                      
+            <div class="card">
+                <a href="#" class="imagen">
+                    <img src="/img/casa.png">
+                    <div class="precio d-flex position-absolute">
+                        <h3>$100,000 MXN</h3>
+                        <span>Venta</span>
+                    </div>
+                </a>
+                <div class="contenido">
+                    <a href="#">Real Las Quintas</a>
+                    <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> Direccion</p>
+                    <hr class="sidebar-divider">
+                    <div class="d-flex justify-content-around">
+                        <div><span>2</span><i class="fa-solid fa-shower"></i></div>
+                        <div><i class="fas fa-vector-square"></i><span></span>m<sup>2</sup></div>
+                        <div><span>2</span><i class="fas fa-bed"></i></sup></div>
+
                     </div>
                 </div>
-
             </div>
+        </div>
     </div>
 </div>
 <?php
