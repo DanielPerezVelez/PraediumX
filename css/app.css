@@ -1,134 +1,174 @@
 .cerrar-sesion:hover a {
-    background-color: red;
-    transition: all 300ms;
+  background-color: red;
+  transition: all 300ms;
 }
 
 .colorprincipal {
-    background-color: #2b91df;
+  background-color: #2b91df!important;
 }
 
 
 .container-options{
-    position: relative;
+  position: relative;
 }
 
 .select-box {
-    display: flex;
-    width: 200px;
-    flex-direction: column;
-    position: absolute;
-    margin-top: 10px;
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 10px;
 }
 
 .select-box .options-container {
-    background: #2b91df;
-    color: #f5f6fa;
-    max-height: 0;
-    width: 100%;
-    opacity: 0;
-    transition: all 0.4s;
-    border-radius: 8px;
-    overflow: hidden;
+  background: #2b91df;
+  color: #f5f6fa;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
 
-    order: 1;
+  order: 1;
 }
 
 .selected {
-    background: #2b91df;
-    border-radius: 3px;
-    color: #f5f6fa;
-    position: relative;
+  background: #2b91df;
+  border-radius: 3px;
+  color: #f5f6fa;
+  position: relative;
 
-    order: 0;
+  order: 0;
 }
 .rotar{
-    transition: all 300ms;
-    transform: rotate(-180deg);
+  transition: all 300ms;
+  transform: rotate(-180deg);
 }
 #caret-down{
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .selected::after {
-    content: "";
-    background-size: contain;
-    background-repeat: no-repeat;
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
 
-    position: absolute;
-    height: 100%;
-    width: 32px;
-    right: 10px;
-    top: 5px;
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 10px;
+  top: 5px;
 
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 .select-box .options-container.active {
-    max-height: 240px;
-    opacity: 1;
-    overflow-y: auto;
-  }
-  
-  .select-box .options-container.active + .selected::after {
-    transform: rotateX(180deg);
-    top: -6px;
-  }
-  
-  .select-box .options-container::-webkit-scrollbar {
-    width: 8px;
-    background: #0d141f;
-    border-radius: 0 8px 8px 0;
-  }
-  
-  .select-box .options-container::-webkit-scrollbar-thumb {
-    background: #525861;
-    border-radius: 0 8px 8px 0;
-  }
-  
-  .select-box .option,
-  .selected {
-    padding: 4px 24px;
-    cursor: pointer;
-  }
-  .select-box .option:hover {
-    transition: all 400ms;
-    background: #f5f6fa;
-    color: #0d141f;
-  }
-  
-  .select-box label {
-    cursor: pointer;
-    width: 100%;
-    margin: 0;
-  }
-  
-  .select-box .option .radio {
-    display: none;
-  }
+  max-height: 240px;
+  opacity: 1;
+  overflow-y: auto;
+}
 
-  .tarjetapropiedad{
-    width: 100%;
-    display: flex;
-    max-width: 1100px;
-  }
-  .card{
-    width: 40%;
-    margin: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #f5f6fa;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-    transition: all 400ms ease;
-  }
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -6px;
+}
 
-  .card:hover{
-   box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-  }
+.select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 8px 8px 0;
+}
 
-  .card img{
-    width: 100%;
-    height: 210px;
-  }
+.select-box .options-container::-webkit-scrollbar-thumb {
+  background: #525861;
+  border-radius: 0 8px 8px 0;
+}
 
-  .card .contenido{
-    padding: 12px;
-  }
+.select-box .option,
+.selected {
+  padding: 4px 24px;
+  cursor: pointer;
+}
+.select-box .option:hover {
+  transition: all 400ms;
+  background: #f5f6fa;
+  color: #0d141f;
+}
+
+.select-box label {
+  cursor: pointer;
+  width: 100%;
+  margin: 0;
+}
+
+.select-box .option .radio {
+  display: none;
+}
+
+.tarjetapropiedad{
+  width: 100%;
+  display: flex;
+  max-width: 1100px;
+}
+.card{
+  width: 33%;
+  margin: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f5f6fa;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+  transition: all 400ms ease;
+}
+
+.card:hover{
+ box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+}
+
+.card .imagen {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: flex-end;
+}
+
+.card .imagen img{
+  width: 100%;
+  height: 210px;
+}
+
+.card .contenido{
+  padding: 12px;
+}
+
+.card .imagen h3{
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0,0,0,0.4);
+
+}
+.card .imagen span{
+  font-size: 12px;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background:#2b91df ;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.4);
+
+}
+
+.card .contenido a {
+  text-decoration: none;
+  font-size: 25px;
+  color:#525861;
+
+}
+
+.precio {
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 10px;
+  align-items: flex-end;
+}

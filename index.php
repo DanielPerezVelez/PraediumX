@@ -13,5 +13,8 @@ if($rol==4){
 if($rol==3){
     include 'templatesIndex/indexHeaderComprador.php';
 }
+if($rol==1){
+    include 'templatesIndex/indexHeaderAdmin.php';
+}
 //Incluye el footer
 include 'templatesIndex/footer.php';
