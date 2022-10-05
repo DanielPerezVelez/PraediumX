@@ -96,6 +96,13 @@
     align-items: flex-end;
   }
 
+  .card .imagen {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: flex-end;
+  }
+
   .card .imagen img{
     width: 100%;
     height: 210px;
