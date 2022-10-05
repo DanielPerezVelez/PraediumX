@@ -78,6 +78,13 @@ if(!isset($_SESSION['usermail'])){
                     <div class="div-nacionalidad">
                         <i class="fa-solid fa-earth-americas"></i>
                         <?php
+                            if($_SESSION['nacionalidad']==''){
+                        ?>
+                        <a><?php
+                                echo "No especificado";
+                            }else{     
+                        ?></a>
+                        <?php
                             $query="SELECT nacionalidades.nacionalidad
                             FROM cliente INNER JOIN nacionalidades
                             ON cliente.idnacionalidad = nacionalidades.idnacionalidad WHERE idcliente='$idcliente'";
@@ -88,6 +95,7 @@ if(!isset($_SESSION['usermail'])){
                         <a> <?php echo $row['nacionalidad'];?> </a>
                         <?php
                             }
+                        }
                         ?>
                     </div>   
                 </div>
@@ -114,6 +122,13 @@ if(!isset($_SESSION['usermail'])){
                         <a class="acerca-demi">Sexo</a>
                         <br><br>
                         <a class="a-nac2">
+                            <?php
+                                if($_SESSION['sexo']==''){
+                            ?>
+                            <a><?php
+                                    echo "No especificado";
+                                }     
+                            ?></a>
                             <?php
                                 $query="SELECT sexos.sexo
                                 FROM cliente INNER JOIN sexos
@@ -148,6 +163,13 @@ if(!isset($_SESSION['usermail'])){
                         <a class="acerca-2">Año de nacimiento</a>
                         <br><br>
                         <a class="a-nac2">
+                            <?php
+                                if($_SESSION['sexo']==''){
+                            ?>
+                            <a><?php
+                                     echo "No especificado";
+                                }     
+                            ?></a>
                             <?php
                                 $query="SELECT anios.anio
                                 FROM cliente INNER JOIN anios

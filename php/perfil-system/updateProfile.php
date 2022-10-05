@@ -23,6 +23,7 @@ $_SESSION['aboutme']=$aboutme;
 $_SESSION['ciudadorigen']=$cdo;
 $_SESSION['sexo']=$sexo;
 $_SESSION['anionac']=$adn;
+$_SESSION['nacionalidad']=$nacionalidad;
 sleep(1);
 header("location: perfil.php");
 //FIN DE ACTUALIZAR DATOS

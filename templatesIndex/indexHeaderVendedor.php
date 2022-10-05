@@ -72,7 +72,8 @@
                     <span>Mi Cuenta</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">  
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="php/perfil-system/perfil.php">Mi perfil</a> 
                         <a class="collapse-item" href="php/modulos/vendedor/buzon.php">Buzon</a>
                         <a class="collapse-item" href="php/modulos/vendedor/propiedades.php">Propiedades</a>
                         <a class="collapse-item" href="php/modulos/vendedor/añadirProp.php">Añadir propiedad</a>

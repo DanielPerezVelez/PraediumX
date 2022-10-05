@@ -67,10 +67,10 @@ if(!isset($_SESSION['usermail'])){
                         <div class="div-info">
                             <div class="div-form-info">
                                 <a class="a-nombre">Nombre(s):</a>
-                                <input name="nombres" placeholder="<?php echo "$nombreCliente";?>"></input>
+                                <input required name="nombres" placeholder="<?php echo "$nombreCliente";?>"></input>
                                 <br>
                                 <a class="a-apellido">Apellido(s):</a>
-                                <input name="apellidos" placeholder="<?php echo "$apellidosCliente";?>"></input>
+                                <input required name="apellidos" placeholder="<?php echo "$apellidosCliente";?>"></input>
                                 <br>
                                 <div>
                                     <a class="a-nac">Nacionalidad:</a>
@@ -94,7 +94,7 @@ if(!isset($_SESSION['usermail'])){
                             <div class="div-form-aboutme">
                                 <h1>Acerca de mi</h1>
                                 <br>
-                                <textarea name="aboutme" class="txtarea-aboutme" placeholder="<?php
+                                <textarea required name="aboutme" class="txtarea-aboutme" placeholder="<?php
                                     if($_SESSION['aboutme']==''){
                                         echo "Escribe algo sobre ti...";
                                     }else{
@@ -109,7 +109,7 @@ if(!isset($_SESSION['usermail'])){
                         <div class="div-infoad">
                             <br>
                             <h4>Ciudad de origen</h4>
-                            <input name="cdo" placeholder="<?php
+                            <input required name="cdo" placeholder="<?php
                                 if($_SESSION['ciudadorigen']==''){
                                     echo "No especificado";
                                 }else{

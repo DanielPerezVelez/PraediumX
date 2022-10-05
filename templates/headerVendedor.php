@@ -73,7 +73,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">  
-                    <a class="collapse-item" href="buzon.php">Buzon</a>
+                        <a class="collapse-item" href="../../perfil-system/perfil.php">Mi perfil</a>
+                        <a class="collapse-item" href="buzon.php">Buzon</a>
                         <a class="collapse-item" href="propiedades.php">Propiedades</a>
                         <a class="collapse-item" href="añadirProp.php">Añadir propiedad</a>
                     </div>
