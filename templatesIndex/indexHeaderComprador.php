@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Tablero</title>
+    <title>PRAEDIUM</title>
 
     <!-- Custom fonts for this template-->
     <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
@@ -18,7 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/cssComprador/app.css">
 </head>
 
 <body id="page-top">
@@ -75,8 +75,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">  
                         <a class="collapse-item" href="buzon.php">Buzon</a>
                         <a class="collapse-item" href="php/modulos/comprador/propiedades.php">Propiedades</a>
-                        <a class="collapse-item" href="bolsa.php">Bolsa Inmobiliaria</a>
-                        <a class="collapse-item" href="contacto.php">Contacto</a>
+                        <a class="collapse-item" href="php/modulos/comprador/añadirProp.php">Añadir Propiedad</a>
                     </div>
                 </div>
             </li>

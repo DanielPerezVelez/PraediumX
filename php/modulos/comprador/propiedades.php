@@ -58,14 +58,14 @@ include '../../crud.php';
 
         </nav>
         <div class="tarjetapropiedad">
-                <div class="card">
-                    <a href="#" class="imagen">
-                        <img src="../../../img/casa.png">
-                        <div class="precio d-flex position-absolute">
-                            <h3>$100,000 MXN</h3>
-                            <span>Venta</span>
-                        </div>
-                    </a>
+            <div class="card">
+                <a href="#" class="imagen">
+                    <img src="../../../img/casa.png">
+                    <div class="precio d-flex position-absolute">
+                        <h3>$100,000 MXN</h3>
+                        <span>Venta</span>
+                    </div>
+                </a>
                 <div class="contenido">
                     <a href="#">Real Las Quintas</a>
                     <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> Direccion</p>
@@ -74,7 +74,6 @@ include '../../crud.php';
                         <div><span>2</span><i class="fa-solid fa-shower"></i></div>
                         <div><i class="fas fa-vector-square"></i><span></span>m<sup>2</sup></div>
                         <div><span>2</span><i class="fas fa-bed"></i></sup></div>
-
                     </div>
                 </div>
             </div>
