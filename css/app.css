@@ -74,7 +74,6 @@
     max-width: 1100px;
   }
   .card{
-    width: 33%;
     margin: 20px;
     border-radius: 6px;
     overflow: hidden;
@@ -144,3 +143,11 @@
     padding: 0px 10px;
     align-items: flex-end;
   }
+
+.contenedor-servicios div span{
+  margin-right: 5px;
+}
+.contenedor-propiedades{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}

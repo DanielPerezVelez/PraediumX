@@ -1,6 +1,6 @@
 <?php
 session_start();
-$rol=$_SESSION['rol'];
+$rol = $_SESSION['rol'];
 include '../../../templates/headerAdmin.php';
 include '../../crud.php';
 ?>
@@ -57,27 +57,31 @@ include '../../crud.php';
 
 
         </nav>
-        <div class="tarjetapropiedad">
-            <div class="card">
-                <a href="#" class="imagen">
-                    <img src="../../../img/casa.png">
-                    <div class="precio d-flex position-absolute">
-                        <h3>$100,000 MXN</h3>
-                        <span>Venta</span>
-                    </div>
-                </a>
-                <div class="contenido">
-                    <a href="#">Real Las Quintas</a>
-                    <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> Direccion</p>
-                    <hr class="sidebar-divider">
-                    <div class="d-flex justify-content-around">
-                        <div><span>2</span><i class="fa-solid fa-shower"></i></div>
-                        <div><i class="fas fa-vector-square"></i><span></span>m<sup>2</sup></div>
-                        <div><span>2</span><i class="fas fa-bed"></i></sup></div>
+        <div class="contenedor-propiedades">
+            <?php while ($propiedad = $resultado2->fetch_assoc()) { ?>
+                <div class="tarjetapropiedad">
+                    <div class="card">
+                        <a href="#" class="imagen">
+                            <img src="../../../img/<?php echo $propiedad['imagen']; ?>">
+                            <div class="precio d-flex position-absolute">
+                                <h3> $<?php echo number_format($propiedad['precio']); ?> </h3>
+                                <span><?php echo $propiedad['estado']; ?></span>
+                            </div>
+                        </a>
+                        <div class="contenido">
+                            <a href="#"><?php echo $propiedad['nombre']; ?></a>
+                            <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> <?php echo $propiedad['direccion']; ?></p>
+                            <hr class="sidebar-divider">
+                            <div class="contenedor-servicios d-flex justify-content-around">
+                                <div><span><?php echo $propiedad['toilets']; ?></span><i class="fa-solid fa-shower"></i></div>
+                                <div><i class="fas fa-vector-square"></i><span></span><?php echo $propiedad['medida']; ?>m<sup>2</sup></div>
+                                <div><span><?php echo $propiedad['cuartos']; ?></span><i class="fas fa-bed padding-2"></i></sup></div>
 
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </div>
