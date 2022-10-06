@@ -8,7 +8,10 @@ $idcliente=$_SESSION['idcliente'];
 $query = "SELECT * FROM cliente WHERE idcliente='$idcliente'";
 $resultado = mysqli_query($conexion,$query);
 while($row=$resultado->fetch_assoc()){
-     $a=$row['nombres'];
+     $nombre=$row['nombres'];
+
 }
-//a
+$query2 = "SELECT * FROM propiedades";
+$resultado2 = mysqli_query($conexion,$query2);
+
 ?>
