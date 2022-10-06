@@ -172,3 +172,10 @@
   padding: 0px 10px;
   align-items: flex-end;
 }
+.div-addProp{
+  margin-top: 10px;
+  margin-left: 580px;
+}
+.button-addProp{
+  border-color: green;
+}

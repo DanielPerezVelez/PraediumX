@@ -5,7 +5,16 @@ include '../../../templates/headerVendedor.php';
 include '../../crud.php';
 ?>
 <div class="container h-100">
-    <h1>Propiedades</h1>
+    <div style="display:flex;" >
+        <h1>Mis Propiedades</h1>
+        <div class="div-addProp">
+            <a href="añadirProp.php">
+                <button id="button-addProp" class="button-addProp">
+                    Agregar Propiedad
+                </button>
+            </a> 
+        </div>
+    </div>   
     <div>
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             <div class="container">
@@ -31,7 +40,7 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../../js/animation.js"></script>
+                <script src="../../../js/scriptsVendedor/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
@@ -52,28 +61,17 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../../js/animation.js"></script>
+                <script src="../../../js/scriptsVendedor/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
-                    <div id="seleted1" class="selected">
-                        Agregar propiedad
-                        <i id="caret-down" class="ms-2 fa-solid fa-caret-down"></i>
-                    </div>
-                    <div class="select-box">
-                        <div class="options-container">
-                            <div class="option">
-                                <input type="radio" class="radio" id="Benito Juarez" name="Estado" />
-                                <label for="Benito Juarez">Renta</label>
-                            </div>
-                            <div class="option">
-                                <input type="radio" class="radio" id="Benito Juarez" name="Estado" />
-                                <label for="Benito Juarez">Compra</label>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="filtrarProp.php">
+                        <button id="seleted1" class="selected">
+                            Filtrar
+                        </button>
+                    </a>
                 </div>
-                <script src="../../../js/animation.js"></script>
+                <script src="../../../js/scriptsVendedor/animation.js"></script>
             </div>
         </nav>
         <div class="tarjetapropiedad">
