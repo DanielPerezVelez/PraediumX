@@ -1,7 +1,7 @@
 <?php
 
 function conectarDB() : mysqli {
-    $conexion = mysqli_connect('localhost', 'root', '', 'bdmmo1');
+    $conexion = mysqli_connect('localhost', 'root', '', 'bdimmo1');
 
     if(!$conexion) {
         echo "error";
