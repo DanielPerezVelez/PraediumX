@@ -54,13 +54,13 @@ include '../../crud.php';
                 </div>
                 <script src="../../../js/animation.js"></script>
             </div>
-            
+
 
         </nav>
         <div class="tarjetapropiedad">
             <div class="card">
                 <a href="#" class="imagen">
-                    <img src="../../../img/casa.png">
+                    <img src="/img/casa.png">
                     <div class="precio d-flex position-absolute">
                         <h3>$100,000 MXN</h3>
                         <span>Venta</span>
