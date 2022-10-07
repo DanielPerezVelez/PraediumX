@@ -1,6 +1,7 @@
 <?php
 session_start();
 $rol = $_SESSION['rol'];
+include '../../conexion.php';
 include '../../../templates/headerAdmin.php';
 include '../../crud.php';
 ?>
@@ -57,31 +58,73 @@ include '../../crud.php';
 
 
         </nav>
-        <div class="contenedor-propiedades">
-            <?php while ($propiedad = $resultado2->fetch_assoc()) { ?>
-                <div class="tarjetapropiedad">
-                    <div class="card">
-                        <a href="#" class="imagen">
-                            <img src="../../../img/<?php echo $propiedad['imagen']; ?>">
-                            <div class="precio d-flex position-absolute">
-                                <h3> $<?php echo number_format($propiedad['precio']); ?> </h3>
-                                <span><?php echo $propiedad['estado']; ?></span>
-                            </div>
-                        </a>
-                        <div class="contenido">
-                            <a href="#"><?php echo $propiedad['nombre']; ?></a>
-                            <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> <?php echo $propiedad['direccion']; ?></p>
-                            <hr class="sidebar-divider">
-                            <div class="contenedor-servicios d-flex justify-content-around">
-                                <div><span><?php echo $propiedad['toilets']; ?></span><i class="fa-solid fa-shower"></i></div>
-                                <div><i class="fas fa-vector-square"></i><span></span><?php echo $propiedad['medida']; ?>m<sup>2</sup></div>
-                                <div><span><?php echo $propiedad['cuartos']; ?></span><i class="fas fa-bed padding-2"></i></sup></div>
+        <div>
+            <?php
+             if(!empty($_REQUEST["nume"])){ $_REQUEST["nume"] = $_REQUEST["nume"];}else{ $_REQUEST["nume"] = '1';}
+             if($_REQUEST["nume"] == "" ){$_REQUEST["nume"] = "1";}
+             $articulos=mysqli_query($conexion,"SELECT * FROM propiedades  ;");
+             $num_registros=@mysqli_num_rows($articulos);
+             $registros= '2';
+             $pagina=$_REQUEST["nume"];
+             if (is_numeric($pagina))
+             $inicio= (($pagina-1)*$registros);
+             else
+             $inicio=0;
+             $busqueda=mysqli_query($conexion,"SELECT * FROM propiedades LIMIT $inicio,$registros;");
+             $paginas=ceil($num_registros/$registros);
+            ?>
+            <div class="contenedor-propiedades">
+                <?php while ($propiedad = mysqli_fetch_assoc($busqueda)) { ?>
+                    <div class="tarjetapropiedad">
+                        <div class="card">
+                            <a href="#" class="imagen">
+                                <img src="../../../img/<?php echo $propiedad['imagen']; ?>">
+                                <div class="precio d-flex position-absolute">
+                                    <h3> $<?php echo number_format($propiedad['precio']); ?> </h3>
+                                    <span><?php echo $propiedad['estado']; ?></span>
+                                </div>
+                            </a>
+                            <div class="contenido">
+                                <a href="#"><?php echo $propiedad['nombre']; ?></a>
+                                <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> <?php echo $propiedad['direccion']; ?></p>
+                                <hr class="sidebar-divider">
+                                <div class="contenedor-servicios d-flex justify-content-around">
+                                    <div><span><?php echo $propiedad['toilets']; ?></span><i class="fa-solid fa-shower"></i></div>
+                                    <div><i class="fas fa-vector-square"></i><span></span><?php echo $propiedad['medida']; ?>m<sup>2</sup></div>
+                                    <div><span><?php echo $propiedad['cuartos']; ?></span><i class="fas fa-bed padding-2"></i></sup></div>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
+            <div class="container-fluid  col-12">
+        <ul class="pagination pg-dark justify-content-center pb-5 pt-5 mb-0" style="float: none;" >
+            <li class="page-item">
+            <?php
+            if($_REQUEST["nume"] == "1" ){
+            $_REQUEST["nume"] == "0";
+            echo  "";
+            }else{
+            if ($pagina>1)
+            $ant = $_REQUEST["nume"] - 1;
+            echo "<a class='paginacion page-link' aria-label='Previous' href='propiedades.php?nume=1'><span aria-hidden='true'>&laquo;</span><span class='sr-only'>Previous</span></a>"; 
+            echo "<li class='page-item '><a class='page-link' href='propiedades.php?nume=". ($pagina-1) ."' >".$ant."</a></li>"; }
+            echo "<li class='page-item active'><a class='page-link' >".$_REQUEST["nume"]."</a></li>"; 
+            $sigui = $_REQUEST["nume"] + 1;
+            $ultima = $num_registros / $registros;
+            if ($ultima == $_REQUEST["nume"] +1 ){
+            $ultima == "";}
+            if ($pagina<$paginas && $paginas>1)
+            echo "<li class='page-item'><a class='page-link' href='propiedades.php?nume=". ($pagina+1) ."'>".$sigui."</a></li>"; 
+            if ($pagina<$paginas && $paginas>1)
+            echo "
+            <li class='page-item'><a class='page-link' aria-label='Next' href='propiedades.php?nume=". ceil($ultima) ."'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>Next</span></a>
+            </li>";
+            ?>
+        </ul>
+    </div>
         </div>
     </div>
 </div>
