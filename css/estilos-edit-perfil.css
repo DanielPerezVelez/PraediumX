@@ -17,8 +17,7 @@ body{
 /*TOP-WRAPPER*/
 .divtop-wrapper{
     margin-top: 0px;
-    position: absolute;
-    z-index: 1;
+    position: relative;
     position: sticky;
     top: 0;
     height: 50px;

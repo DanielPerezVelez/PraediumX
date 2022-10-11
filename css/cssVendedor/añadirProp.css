@@ -1,0 +1,21 @@
+.div-opciones{
+    margin-top: 30px;
+}
+.div-a{
+    display:flex;
+    margin-top: 35px;
+}
+.div-input{
+    position:absolute;
+    margin-left: 300px;
+}
+.div-b{
+    margin-top: 35px;
+}
+.div-checkbox{
+    position:absolute;
+    margin-left: 300px;
+}
+.container-checkbox{
+    display:flex;
+}
