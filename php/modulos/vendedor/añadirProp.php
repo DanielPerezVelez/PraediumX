@@ -13,7 +13,21 @@ include '../../crud.php';
             <div class="div-a">
                 <a>Tipo de propiedad</a>
                 <div class="div-input">
-                    <select></select>
+                    <select>
+                        <?php
+                            $conexion= conectarDB(); 
+                            $sql='SELECT * FROM tipin';
+                            $query=mysqli_query($conexion,$sql);
+                            
+                            while($row=mysqli_fetch_array($query)){
+                                $idtipin=$row['idtipin'];
+                                $tipo=$row['tipo'];          
+                        ?>
+                        <option value="<?php echo $idtipin ?>"><?php echo $tipo?></option>
+                        <?php          
+                            }
+                        ?>
+                    </select>
                 </div>               
             </div>
             <div class="div-a">
@@ -29,9 +43,31 @@ include '../../crud.php';
                 </div>               
             </div>
             <div class="div-a">
+                <a>Precio</a>
+                <div class="div-input">
+                    <input></input>
+                </div>               
+            </div>
+            <div class="div-a">
                 <a>Tipo de operación</a>
                 <div class="div-input">
-                    <select></select>
+                    <select>
+                        <?php
+                            $conexion= conectarDB(); 
+                            $sqlOp='SELECT * FROM operacion';
+                            $queryOp=mysqli_query($conexion,$sqlOp);
+                            
+                            while($row=mysqli_fetch_array($queryOp)){
+                                $idop=$row['idop'];
+                                $tipo=$row['tipo'];
+                                if($idop==1 || $idop==2){          
+                        ?>
+                        <option value="<?php echo $idtipin ?>"><?php echo $tipo?></option>
+                        <?php 
+                                }         
+                            }
+                        ?>
+                    </select>
                 </div>               
             </div>
             <div class="div-a">
@@ -260,7 +296,7 @@ include '../../crud.php';
                 <h4>General</h4>
                 <div class="container-checkbox">
                     <div>
-                        <a>jeje</a>
+                        <a>Accesibilidad para adultos mayores</a>
                     </div>
                     <div class="div-checkbox">
                         <input type="checkbox"></input>
@@ -268,12 +304,196 @@ include '../../crud.php';
                 </div>
                 <div class="container-checkbox">
                     <div>
-                        <a>jeje</a>
+                        <a>Accesibilidad para personas con discapacidad</a>
                     </div>
                     <div class="div-checkbox">
                         <input type="checkbox"></input>
                     </div>
-                </div>                
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Aire acondicionado</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Alarma</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>  
+                <div class="container-checkbox">
+                    <div>
+                        <a>Amueblado</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>  
+                <div class="container-checkbox">
+                    <div>
+                        <a>Bodega</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div> 
+                <div class="container-checkbox">
+                    <div>
+                        <a>Calefacción</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>  
+                <div class="container-checkbox">
+                    <div>
+                        <a>Chimenea</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>  
+                <div class="container-checkbox">
+                    <div>
+                        <a>Circuito cerrado</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>  
+                <div class="container-checkbox">
+                    <div>
+                        <a>Cocina</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>   
+                <div class="container-checkbox">
+                    <div>
+                        <a>Cocina equipada</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>  
+                <div class="container-checkbox">
+                    <div>
+                        <a>Conmutador</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Cuarto de servicio</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Dos plantas</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Elevador</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Fraccionamiento privado</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Hidroneumático</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Mascotas permitias</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Penthouse</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Planta baja</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Planta eléctrica</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Portero</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Seguridad 12 horas</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Seguridad 24 horas</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
+                <div class="container-checkbox">
+                    <div>
+                        <a>Una sola planta</a>
+                    </div>
+                    <div class="div-checkbox">
+                        <input type="checkbox"></input>
+                    </div>
+                </div>
             </div>
 
             <div class="div-b">
