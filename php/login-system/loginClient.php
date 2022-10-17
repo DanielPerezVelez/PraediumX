@@ -1,7 +1,6 @@
-<?php
+<?php session_start();
 require_once("../conexion.php");
 require_once("../funciones.php");
-session_start();
 
 $conexion= conectarDB();
 $correo= clean($_POST ['loginCorreo']);

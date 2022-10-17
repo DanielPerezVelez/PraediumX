@@ -1,8 +1,7 @@
-<?php
+<?php session_start();
 require_once("../conexion.php");
 require_once("../funciones.php");
 $conexion= conectarDB();
-session_start();
 
 $idcliente=$_SESSION['idcliente'];
 $nombres= clean($_POST ['nombres']);

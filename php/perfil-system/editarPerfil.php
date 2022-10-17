@@ -1,7 +1,6 @@
-<?php
+<?php session_start();
 require_once("../conexion.php");
 require_once("../funciones.php");
-session_start();
 //Para que se apliquen los cambios de $_SESSION se debe DESTRUIR LA SESION ACTUAL
 $idcliente=$_SESSION['idcliente'];
 $correoCliente=$_SESSION['usermail'];
@@ -67,10 +66,10 @@ if(!isset($_SESSION['usermail'])){
                         <div class="div-info">
                             <div class="div-form-info">
                                 <a class="a-nombre">Nombre(s):</a>
-                                <input required name="nombres" placeholder="<?php echo "$nombreCliente";?>"></input>
+                                <input required name="nombres" placeholder="<?php echo "$nombreCliente";?>" maxlength="80"></input>
                                 <br>
                                 <a class="a-apellido">Apellido(s):</a>
-                                <input required name="apellidos" placeholder="<?php echo "$apellidosCliente";?>"></input>
+                                <input required name="apellidos" placeholder="<?php echo "$apellidosCliente";?>" maxlength="100"></input>
                                 <br>
                                 <div>
                                     <a class="a-nac">Nacionalidad:</a>
@@ -100,7 +99,7 @@ if(!isset($_SESSION['usermail'])){
                                     }else{
                                         echo "$aboutme";
                                     }
-                                ?>"></textarea>
+                                ?>" maxlength="245"></textarea>
                             </div>    
                         </div>
                     </div>
@@ -109,7 +108,7 @@ if(!isset($_SESSION['usermail'])){
                         <div class="div-infoad">
                             <br>
                             <h4>Ciudad de origen</h4>
-                            <input required name="cdo" placeholder="<?php
+                            <input required name="cdo" maxlength="100" placeholder="<?php
                                 if($_SESSION['ciudadorigen']==''){
                                     echo "No especificado";
                                 }else{

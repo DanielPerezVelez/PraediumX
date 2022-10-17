@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 //Valida si ha iniciado sesion, sino, te redirige al login screen
 if(!isset($_SESSION['usermail'])){
     sleep(1);

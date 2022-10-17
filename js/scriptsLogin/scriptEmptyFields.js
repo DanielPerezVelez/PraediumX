@@ -14,11 +14,11 @@ form.addEventListener("submit",(e)=>{
     }*/
 
     if(password.value.length<=6){
-        messages.push("Password must be longer than 6 char");
+        messages.push("La contraseña debe ser mayor a 6 caracteres");
     }
 
     if(password.value.length>=20){
-        messages.push("Password must be shorter than 20 char");
+        messages.push("La contraseña debe ser menor a 10 caracteres");
     }
 
     if(password.value==="password"){

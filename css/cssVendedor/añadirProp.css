@@ -1,5 +1,5 @@
 .div-opciones{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .div-a{
     display:flex;
@@ -14,8 +14,24 @@
 }
 .div-checkbox{
     position:absolute;
-    margin-left: 330px;
+    margin-left: 345px;
 }
 .container-checkbox{
     display:flex;
+}
+.div-form{
+    display:flex;
+}
+.div-button{
+    margin-left: 600px;
+}
+.div-caract{
+    margin-top: 35px;
+    margin-left: 420px;
+}
+.div-titulo{
+    display:flex;
+}
+.div-drag-area{
+    margin-top: 50px;
 }

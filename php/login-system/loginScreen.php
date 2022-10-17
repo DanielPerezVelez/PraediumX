@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +30,15 @@
             <!-- Formularios -->
             <div class="contenedor_login_register"> 
                 <?php
-                    session_start();
+                    
                     if(isset($_SESSION['usermail'])){
                         header("location: ../../index.php");
                     }
                 ?>
                 <form action="loginClient.php" method="POST" class="formulario_login">
                     <h2>Iniciar Sesion</h2>
-                    <input required type="text" placeholder="Correo" name="loginCorreo">
-                    <input required type="password" placeholder="Contraseña" name="loginPassword">
+                    <input required type="text" placeholder="Correo" name="loginCorreo" maxlength="80">
+                    <input required type="password" placeholder="Contraseña" name="loginPassword" maxlength="10">
                     <div class="divBtnFoLo">
                         <button id="btnFoLo"> Entrar </button>
                     </div>
@@ -60,15 +62,13 @@
                     <h2>Registrarse</h2>
                     <div>
                         <!-- Div que contienen los input -->
-                        <input required type="text" placeholder="Nombre(s)" class="registerNombreClass" name="registerNombres">
+                        <input required type="text" placeholder="Nombre(s):" class="registerNombreClass" name="registerNombres" maxlength="80">
                         <!-- input para nombre -->
-                        <input required type="text" placeholder="Apellido(s)" class="registerApellidoClass" name="registerApellidos">
+                        <input required type="text" placeholder="Apellido(s):" class="registerApellidoClass" name="registerApellidos" maxlength="100">
                         <!-- input para apellido -->
-                        <input required type="text" placeholder="Telefono" class="registerTelefonoClass" name="registerTelefono">
-                        <!-- input para telefono -->
-                        <input required id="inputCorreoRe" type="text" placeholder="Correo" class="registerCorreoClass" name="registerCorreo">
+                        <input required id="inputCorreoRe" type="text" placeholder="Correo:" class="registerCorreoClass" name="registerCorreo" maxlength="80">
                         <!-- input para correo -->
-                        <input required id="inputPasswordRe" type="password" placeholder="Contraseña" class="registerPasswordClass" name="registerPassword">
+                        <input required id="inputPasswordRe" type="password" placeholder="Contraseña:" class="registerPasswordClass" name="registerPassword" maxlength="10">
                         <!-- input para contraseñaD -->
                     </div>
                     <br>
@@ -105,25 +105,16 @@
                     </div>
                     <br>
                     <?php if(isset($_GET['errorCorreo'])){
-                        ?>
+                    ?>
                         <script src="../../js/scriptsLogin/mostrarRe.js"></script>
                         <div class="divErrores1">
                             <a class="aFallo">El correo ya ha sido utilizado con anterioridad.</a>
                             <br>
                             <a class="aFallo">Inicia sesion para continuar.</a>
                         </div>
-                        <?php
+                    <?php
                         }
-                        if(isset($_GET['errorTelefono'])){
-                        ?>
-                        <script src="../../js/scriptsLogin/mostrarRe.js"></script>
-                        <div class="divErrores2">
-                            <a class="aFallo">El teléfono que ingresaste ya está ocupado.</a>
-                            <br>
-                            <a class="aFallo">Elige uno diferente para continuar.</a>
-                        </div>
-                        <?php
-                    }?>
+                    ?>
                 </form>
             </div>
         </div>

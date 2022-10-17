@@ -1,7 +1,6 @@
-<?php
+<?php session_start();
 require_once("../conexion.php");
 require_once("../funciones.php");
-session_start();
 //Para que se apliquen los cambios de $_SESSION se debe DESTRUIR LA SESION ACTUAL
 $idcliente=$_SESSION['idcliente'];
 $correoCliente=$_SESSION['usermail'];
@@ -120,7 +119,7 @@ if(!isset($_SESSION['usermail'])){
                         <br>
                         <i class="fa-solid fa-venus-mars"></i>
                         <a class="acerca-demi">Sexo</a>
-                        <br><br>
+                        <br>
                         <a class="a-nac2">
                             <?php
                                 if($_SESSION['sexo']==''){
