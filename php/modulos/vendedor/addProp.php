@@ -25,10 +25,11 @@ $calle= clean($_POST ['input-calle']);
 $esquina= clean($_POST ['input-esquina']);
 $cp= clean($_POST ['input-cp']);
 //CHECKBOX pasados a variables
-$playa=clean($_POST['input-playa']);
+// $playa=clean($_POST['input-playa']);
 
 $idcliente=$_SESSION['idcliente'];
 
+if(isset($_POST['guardar'])){
 $queryProp= "INSERT INTO inmueble(titulo,descripcion,precio,recamaras,
 baños,medios_baños,estacionamientos,construccion,terreno,largoter,anchoter,añoconst,
 numero_pisos,piso_ubicacion,clave,codigo,calle,esquina,cp,idcliente,idop,idtipin) 
@@ -39,3 +40,6 @@ VALUES
 
 $resultado = mysqli_query($conexion,$queryProp);
 header("location: propiedades.php");
+}
+
+//form data <------ mas de 1 foto

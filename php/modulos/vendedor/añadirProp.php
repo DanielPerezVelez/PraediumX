@@ -5,12 +5,12 @@ include '../../../templates/headerVendedor.php';
 include '../../crud.php';
 ?>
 <div class="container h-100">
-    <form action="addProp.php" method="POST">
+    <form id="form" method="POST">
 <!-- INICIO DEL DIV DEL TITULO -->
         <div class="div-titulo">
             <h1>Crear Propiedad.</h1>
             <div class="div-button">
-                <button> Guardar propiedad </button>
+                <!-- <button type="submit" name="guardar" id="guardar"> Guardar propiedad </button> -->
             </div>
         </div>
 <!-- FIN DEL DIV DEL TITULO -->
@@ -52,7 +52,7 @@ include '../../crud.php';
                 <div class="div-a">
                     <a>Precio</a>
                     <div class="div-input">
-                        <input name="input-precio"></input>
+                        <input name="input-precio"/>
                     </div>               
                 </div>
                 <div class="div-a">
@@ -196,6 +196,7 @@ include '../../crud.php';
                     </div>               
                 </div>
             </div>
+<!-- FIN DEL DIV DE OPCIONES -->
 <!-- INICIO DEL DIV DE CARACTERISTICAS -->
             <div class="div-caract">
                 <h2>Características de la propiedad</h2>
@@ -569,19 +570,101 @@ include '../../crud.php';
             </div>
 <!-- FIN DEL DIV DE CARACTERISTICAS -->
         </div>
-<!-- INICIO DEL DIV DE FOTOS -->
-        <div class="div-drag-area">
-            <h2> Subir fotos </h2>
-            <span>O</span>
-            <button>Selecciona tus archivos</button>
-            <input type="file" name="" id="input-file" hidden multiple/>
-        </div>
-        <div id="preview">
+<!-- FIN DEL DIV FORM -->
+<!-- INICIO DEL DIV DEL DRAG AND DROP -->
+        <form action="" id="form" method="POST" enctype="multipart/form-data">
+            <div id="dropArea" class="div-drop-area">
+                <h2 id="dragText">Arrastra y suelta imágenes</h2>
+                <span>O</span>
+                <button type="button" id="seleccionar-pics">Selecciona tus archivos</button>
+                <input type="file" name="input-file" id="input-file" hidden multiple accept="image/jpeg, image/png"/>
+            </div>
+            <div id="progress">
 
-        </div>
+            </div>
+            <div class="w-full flex justify-end" id="submit">
+                <input type="submit" value="Subir archivos" class="block bg-green-700 hover:bg-green-900 px-3 py-1 rounded-md text-white hover:cursor-pointer my-6 transition-all duration-200 font-bold">
+            </div>
+        </form>
+<!-- FIN DEL DIV DEL DRAG AND DROP -->
+        <!--Estoy haciendo que todo se haga por medio de javascript, sin necesidad de
+        ponerle al form el tipico action="addProp.php" method="POST" para que me agarre las imagenes de una-->
     </form>
 </div>
-<script src=""></script>
+<script src="../../../js/scriptsVendedor/dragAnDrop.js"></script>
+<script src="../../../js/scriptsVendedor/pruebas.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const form = document.getElementById('form');
+        form.addEventListener('submit', uploadFile);
+
+        function uploadFile(event) {
+            event.preventDefault();
+            console.clear();
+
+            let files = document.querySelector('#input-file').files;
+
+            if (!files[0]) {
+                return Swal.fire({
+                    title: 'Error de imágenes',
+                    text: `No has seleccionado ninguna imagen`,
+                    icon: 'error',
+                    showConfirmButton: 'true',
+                });
+            }
+
+            let filesLength = Object.entries(files).length;
+
+            let currentFile = 0;
+
+            for (const value of Object.entries(files)) {
+
+                if (!/\.(jpe?g|png|gif)$/i.test(value[1].name)) {
+                    return Swal.fire({
+                        title: 'Archivo no válido',
+                        text: `El archivo ${value[1].name} no es valido`,
+                        icon: 'error',
+                        showConfirmButton: 'true',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location = '/gallery/panelUpload.php';
+                        }
+                    });
+                }
+
+                const key = Object.entries(files).indexOf(value);
+                let formData = new FormData();
+                formData.append('input-file', value[1]);
+
+                var http = new XMLHttpRequest();
+                var url = '/gallery/uploadImage.php';
+                http.open('POST', url, true);
+
+                http.onreadystatechange = function() {
+                    if (this.readyState === 4) {
+                        const data = JSON.parse(this.responseText);
+                        // console.log(data);
+                        currentFile++;
+                        document.getElementById('progress').innerHTML =
+                            `<p>Subiendo: ${value[1].name}</p>
+                        <p>Imágenes subidas: ${currentFile}/${filesLength}</p>
+                        <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700" style="height: 22px;">
+                            <div class="bg-blue-900 rounded-full z-50" style="width: ${Math.floor(100/filesLength) * currentFile}%; height: 100%"></div>
+                        </div>`;
+
+                        if (currentFile === filesLength) {
+                            document.getElementById('progress').innerHTML =
+                                `<p>All images were successfully uploaded</p>`;
+                            // Reset all things;
+                            form.reset();
+                        }
+                    }
+                }
+                http.send(formData);
+            }
+        }        
+    </script>
+
 <?php
 include '../../../templates/footer.php';
 ?>
