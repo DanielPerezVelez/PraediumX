@@ -11,7 +11,7 @@ while($row=$resultado->fetch_assoc()){
      $nombre=$row['nombres'];
 
 }
-$query2 = "SELECT * FROM propiedades";
-$resultado2 = mysqli_query($conexion,$query2);
+// $query2 = "SELECT * FROM propiedades";
+// $resultado2 = mysqli_query($conexion,$query2);
 
 ?>

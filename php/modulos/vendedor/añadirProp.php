@@ -10,7 +10,7 @@ include '../../crud.php';
         <div class="div-titulo">
             <h1>Crear Propiedad.</h1>
             <div class="div-button">
-                <!-- <button type="submit" name="guardar" id="guardar"> Guardar propiedad </button> -->
+                <button type="submit" name="guardar" id="guardar"> Guardar propiedad </button>
             </div>
         </div>
 <!-- FIN DEL DIV DEL TITULO -->
@@ -572,20 +572,17 @@ include '../../crud.php';
         </div>
 <!-- FIN DEL DIV FORM -->
 <!-- INICIO DEL DIV DEL DRAG AND DROP -->
-        <form action="" id="form" method="POST" enctype="multipart/form-data">
+        <div>
             <div id="dropArea" class="div-drop-area">
                 <h2 id="dragText">Arrastra y suelta imágenes</h2>
                 <span>O</span>
                 <button type="button" id="seleccionar-pics">Selecciona tus archivos</button>
-                <input type="file" name="input-file" id="input-file" hidden multiple accept="image/jpeg, image/png"/>
+                <input type="file" name="input-file" id="input-file" hidden multiple>
             </div>
-            <div id="progress">
+            <div id="preview" name="preview">
 
             </div>
-            <div class="w-full flex justify-end" id="submit">
-                <input type="submit" value="Subir archivos" class="block bg-green-700 hover:bg-green-900 px-3 py-1 rounded-md text-white hover:cursor-pointer my-6 transition-all duration-200 font-bold">
-            </div>
-        </form>
+        </div>
 <!-- FIN DEL DIV DEL DRAG AND DROP -->
         <!--Estoy haciendo que todo se haga por medio de javascript, sin necesidad de
         ponerle al form el tipico action="addProp.php" method="POST" para que me agarre las imagenes de una-->
@@ -594,7 +591,7 @@ include '../../crud.php';
 <script src="../../../js/scriptsVendedor/dragAnDrop.js"></script>
 <script src="../../../js/scriptsVendedor/pruebas.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
+    <!-- <script>
         const form = document.getElementById('form');
         form.addEventListener('submit', uploadFile);
 
@@ -663,7 +660,7 @@ include '../../crud.php';
                 http.send(formData);
             }
         }        
-    </script>
+    </script> -->
 
 <?php
 include '../../../templates/footer.php';
