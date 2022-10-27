@@ -5,7 +5,7 @@ include '../../../templates/headerVendedor.php';
 include '../../crud.php';
 ?>
 <div class="container h-100">
-    <form id="form" method="POST">
+    <form id="form" action="addProp.php" method="POST" enctype="multipart/form-data">
 <!-- INICIO DEL DIV DEL TITULO -->
         <div class="div-titulo">
             <h1>Crear Propiedad.</h1>
@@ -576,8 +576,8 @@ include '../../crud.php';
             <div id="dropArea" class="div-drop-area">
                 <h2 id="dragText">Arrastra y suelta imágenes</h2>
                 <span>O</span>
-                <button type="button" id="seleccionar-pics">Selecciona tus archivos</button>
-                <input type="file" name="input-file" id="input-file" hidden multiple>
+                <!-- <button type="button" id="seleccionar-pics">Selecciona tus archivos</button> -->
+                <input type="file" name="input-file[]" id="input-file" multiple>
             </div>
             <div id="preview" name="preview">
 
@@ -588,8 +588,8 @@ include '../../crud.php';
         ponerle al form el tipico action="addProp.php" method="POST" para que me agarre las imagenes de una-->
     </form>
 </div>
-<script src="../../../js/scriptsVendedor/dragAnDrop.js"></script>
-<script src="../../../js/scriptsVendedor/pruebas.js"></script>
+<!-- <script src="../../../js/scriptsVendedor/dragAnDrop.js"></script>
+<script src="../../../js/scriptsVendedor/pruebas.js"></script> -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script>
         const form = document.getElementById('form');

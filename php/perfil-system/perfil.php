@@ -53,7 +53,7 @@ if(!isset($_SESSION['usermail'])){
             <div class="divgris-wrapper">
                 <div id="pics-conf" class="div-profile-pic">
                     <div class="profile-pic">
-                        <img src="../../img/<?php echo $profilePic;?>" width=200 height=200/>
+                        <img src="../../img/perfilIMG/<?php echo $profilePic;?>" width=200 height=200/>
                     </div>
                 </div>
                 <div class="div-profile-info"> 

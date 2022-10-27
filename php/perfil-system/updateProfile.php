@@ -46,7 +46,7 @@ if (isset($_POST['submit']) && isset($_FILES['uploadImage'])){
             $allowed_exs=array("jpg","jpeg", "png");
             if(in_array($img_ex_lc, $allowed_exs)){
                 $new_img_name=uniqid("IMG-", true).'.'.$img_ex_lc;
-                $img_upload_path='../../img/'.$new_img_name;
+                $img_upload_path='../../img/perfilIMG/'.$new_img_name;
                 move_uploaded_file($tmp_name,$img_upload_path);
                 //actualizar la columna profilepic de la base de datos
                 $_SESSION['profilepic']=$new_img_name;

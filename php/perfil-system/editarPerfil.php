@@ -50,7 +50,7 @@ if(!isset($_SESSION['usermail'])){
                 <div id="pics-conf" class="divpics-conf">
                     <div id="formProPic" class="formProPic" >
                         <div class="profile-pic">
-                            <img src="../../img/<?php echo $profilePic;?>" width=280 height=280/>
+                            <img src="../../img/perfilIMG/<?php echo $profilePic;?>" width=280 height=280/>
                         </div>
                         <div class="pic-change">
                             <input type="file" name="uploadImage" id="uploadImage" accept=".jpg, .jpeg, .png" value="a">
