@@ -162,19 +162,47 @@ include '../../crud.php';
                 <div class="div-a">
                     <a>País</a>
                     <div class="div-input">
-                        <select name="select-pais"></select>
+                        <select name="select-pais">
+                            <?php
+                                $conexion= conectarDB(); 
+                                $sqlPa='SELECT * FROM paises';
+                                $queryPa=mysqli_query($conexion,$sqlPa);
+                                
+                                while($row=mysqli_fetch_array($queryPa)){
+                                    $idpais=$row['idpais'];
+                                    $nombrePa=$row['nombre'];          
+                            ?>
+                            <option value="<?php echo $idpais ?>"><?php echo $nombrePa?></option>
+                            <?php          
+                                }
+                            ?>
+                        </select>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Estado</a>
                     <div class="div-input">
-                        <select name="select-estado"></select>
+                        <select name="select-estado">
+                            <?php
+                                $conexion= conectarDB(); 
+                                $sqlEs='SELECT * FROM estados';
+                                $queryEs=mysqli_query($conexion,$sqlEs);
+                                
+                                while($row=mysqli_fetch_array($queryEs)){
+                                    $idestado=$row['idestado'];
+                                    $nombreEs=$row['nombre'];          
+                            ?>
+                            <option value="<?php echo $idestado ?>"><?php echo $nombreEs?></option>
+                            <?php          
+                                }
+                            ?>
+                        </select>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Ciudad/Delegación</a>
                     <div class="div-input">
-                        <select name="select-ciudad"></select>
+                        <input name="input-ciudad"></input>
                     </div>               
                 </div>
                 <div class="div-a">
@@ -207,7 +235,8 @@ include '../../crud.php';
                             <a>Acceso a playa</a>
                         </div>
                         <div class="div-checkbox">
-                            <input name="input-playa" type="checkbox"></input>
+                            <input type="hidden" name="input-playa" value="No"/>
+                            <input type="checkbox" name="input-playa" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -215,7 +244,8 @@ include '../../crud.php';
                             <a>Balcón</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-balcon"></input>
+                            <input type="hidden" name="input-balcon" value="No"/>
+                            <input type="checkbox" name="input-balcon" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -223,7 +253,8 @@ include '../../crud.php';
                             <a>Cisterna</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-cisterna"></input>
+                            <input type="hidden" name="input-cisterna" value="No"/>
+                            <input type="checkbox" name="input-cisterna" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -231,7 +262,8 @@ include '../../crud.php';
                             <a>Estacionamiento techado</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-roof"></input>
+                            <input type="hidden" name="input-roof" value="No"/>
+                            <input type="checkbox" name="input-roof" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -239,7 +271,8 @@ include '../../crud.php';
                             <a>Facilidad para estacionarse</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-easypark"></input>
+                            <input type="hidden" name="input-easypark" value="No"/>
+                            <input type="checkbox" name="input-easypark" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -247,7 +280,8 @@ include '../../crud.php';
                             <a>Frente a la playa</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-playafrente"></input>
+                            <input type="hidden" name="input-playafrente" value="No"/>
+                            <input type="checkbox" name="input-playafrente" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -255,7 +289,8 @@ include '../../crud.php';
                             <a>Frente al agua</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-aguafrente"></input>
+                            <input type="hidden" name="input-aguafrente" value="No"/>
+                            <input type="checkbox" name="input-aguafrente" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -263,7 +298,8 @@ include '../../crud.php';
                             <a>Garaje</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-garaje"></input>
+                            <input type="hidden" name="input-garaje" value="No"/>
+                            <input type="checkbox" name="input-garaje" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -271,7 +307,8 @@ include '../../crud.php';
                             <a>Jardín</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-jardin"></input>
+                            <input type="hidden" name="input-jardin" value="No">
+                            <input type="checkbox" name="input-jardin" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -279,7 +316,8 @@ include '../../crud.php';
                             <a>Parrilla</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-parrilla"></input>
+                            <input type="hidden" name="input-parrilla" value="No"/>
+                            <input type="checkbox" name="input-parrilla" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -287,7 +325,8 @@ include '../../crud.php';
                             <a>Patio</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-patio"></input>
+                            <input type="hidden" name="input-patio" value="No"/>
+                            <input type="checkbox" name="input-patio" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -295,9 +334,46 @@ include '../../crud.php';
                             <a>Riego por aspersión</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-aspersion"></input>
+                            <input type="hidden" name="input-aspersion" value="No"/>
+                            <input type="checkbox" name="input-aspersion" value="Si"/>
                         </div>
-                    </div>        
+                    </div>  
+                    <div class="container-checkbox">
+                        <div>
+                            <a>Jardín en el techo</a>
+                        </div>
+                        <div class="div-checkbox">
+                            <input type="hidden" name="input-roofgarden" value="No"/>
+                            <input type="checkbox" name="input-roofgarden" value="Si"/>
+                        </div>
+                    </div> 
+                    <div class="container-checkbox">
+                        <div>
+                            <a>Terraza</a>
+                        </div>
+                        <div class="div-checkbox">
+                            <input type="hidden" name="input-terraza" value="No"/>
+                            <input type="checkbox" name="input-terraza" value="Si"/>
+                        </div>
+                    </div>
+                    <div class="container-checkbox">
+                        <div>
+                            <a>Vista al agua</a>
+                        </div>
+                        <div class="div-checkbox">
+                            <input type="hidden" name="input-vistagua" value="No"/>
+                            <input type="checkbox" name="input-vistagua" value="Si"/>
+                        </div>
+                    </div>
+                    <div class="container-checkbox">
+                        <div>
+                            <a>Vista al mar</a>
+                        </div>
+                        <div class="div-checkbox">
+                            <input type="hidden" name="input-vistamar" value="No"/>
+                            <input type="checkbox" name="input-vistamar" value="Si"/>
+                        </div>
+                    </div>                   
                 </div>
 
                 <div class="div-b">
@@ -307,7 +383,8 @@ include '../../crud.php';
                             <a>Accesibilidad para adultos mayores</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-18"></input>
+                            <input type="hidden" name="input-18" value="No"/>
+                            <input type="checkbox" name="input-18" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -315,7 +392,8 @@ include '../../crud.php';
                             <a>Accesibilidad para personas con discapacidad</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-discapacitados"></input>
+                            <input type="hidden" name="input-discapacitados" value="No"/>
+                            <input type="checkbox" name="input-discapacitados" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -323,7 +401,8 @@ include '../../crud.php';
                             <a>Aire acondicionado</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-aa"></input>
+                            <input type="hidden" name="input-aa" value="No"/>
+                            <input type="checkbox" name="input-aa" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -331,7 +410,8 @@ include '../../crud.php';
                             <a>Alarma</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-alarma"></input>
+                            <input type="hidden" name="input-alarma" value="No"/>
+                            <input type="checkbox" name="input-alarma" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -339,7 +419,8 @@ include '../../crud.php';
                             <a>Amueblado</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-amueblado"></input>
+                            <input type="hidden" name="input-amueblado" value="No"/>
+                            <input type="checkbox" name="input-amueblado" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -347,7 +428,8 @@ include '../../crud.php';
                             <a>Bodega</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-bodega"></input>
+                            <input type="hidden" name="input-bodega" value="No"/>
+                            <input type="checkbox" name="input-bodega" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -355,7 +437,8 @@ include '../../crud.php';
                             <a>Calefacción</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-calefaccion"></input>
+                            <input type="hidden" name="input-calefaccion" value="No"/>
+                            <input type="checkbox" name="input-calefaccion" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -363,7 +446,8 @@ include '../../crud.php';
                             <a>Chimenea</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-chimenea"></input>
+                            <input type="hidden" name="input-chimenea" value="No"/>
+                            <input type="checkbox" name="input-chimenea" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -371,7 +455,8 @@ include '../../crud.php';
                             <a>Circuito cerrado</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-circuito"></input>
+                            <input type="hidden" name="input-circuito" value="No"/>
+                            <input type="checkbox" name="input-circuito" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -379,7 +464,8 @@ include '../../crud.php';
                             <a>Cocina</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-cocina"></input>
+                            <input type="hidden" name="input-cocina" value="No"/>
+                            <input type="checkbox" name="input-cocina" value="Si"/>
                         </div>
                     </div>   
                     <div class="container-checkbox">
@@ -387,7 +473,8 @@ include '../../crud.php';
                             <a>Cocina equipada</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-cocinaequipada"></input>
+                            <input type="hidden" name="input-cocinaequipada" value="No"/>
+                            <input type="checkbox" name="input-cocinaequipada" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -395,7 +482,8 @@ include '../../crud.php';
                             <a>Conmutador</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-conmutador"></input>
+                            <input type="hidden" name="input-conmutador" value="No"/>
+                            <input type="checkbox" name="input-conmutador" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -403,7 +491,8 @@ include '../../crud.php';
                             <a>Cuarto de servicio</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-roomservice"></input>
+                            <input type="hidden" name="input-roomservice" value="No"/>
+                            <input type="checkbox" name="input-roomservice" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -411,7 +500,8 @@ include '../../crud.php';
                             <a>Dos plantas</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-2plantas"></input>
+                            <input type="hidden" name="input-2plantas" value="No"/>
+                            <input type="checkbox" name="input-2plantas" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -419,7 +509,8 @@ include '../../crud.php';
                             <a>Elevador</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-elevador"></input>
+                            <input type="hidden" name="input-elevador" value="No"/>
+                            <input type="checkbox" name="input-elevador" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -427,7 +518,8 @@ include '../../crud.php';
                             <a>Fraccionamiento privado</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-fraccpriv"></input>
+                            <input type="hidden" name="input-fraccpriv" value="No"/>
+                            <input type="checkbox" name="input-fraccpriv" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -435,7 +527,8 @@ include '../../crud.php';
                             <a>Hidroneumático</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-hidroneum"></input>
+                            <input type="hidden" name="input-hidroneum" value="No"/>
+                            <input type="checkbox" name="input-hidroneum" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -443,7 +536,8 @@ include '../../crud.php';
                             <a>Penthouse</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-penthouse"></input>
+                            <input type="hidden" name="input-penthouse" value="No"/>
+                            <input type="checkbox" name="input-penthouse" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -451,7 +545,8 @@ include '../../crud.php';
                             <a>Planta baja</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-plantabaja"></input>
+                            <input type="hidden" name="input-plantabaja" value="No"/>
+                            <input type="checkbox" name="input-plantabaja" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -459,7 +554,8 @@ include '../../crud.php';
                             <a>Planta eléctrica</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-plantaelectrica"></input>
+                            <input type="hidden" name="input-plantaelectrica" value="No"/>
+                            <input type="checkbox" name="input-plantaelectrica" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -467,7 +563,8 @@ include '../../crud.php';
                             <a>Portero</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-portero"></input>
+                            <input type="hidden" name="input-portero" value="No"/>
+                            <input type="checkbox" name="input-portero" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -475,7 +572,8 @@ include '../../crud.php';
                             <a>Seguridad 12 horas</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-seguridad12"></input>
+                            <input type="hidden" name="input-seguridad12" value="No"/>
+                            <input type="checkbox" name="input-seguridad12" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -483,7 +581,8 @@ include '../../crud.php';
                             <a>Seguridad 24 horas</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-seguridad24"></input>
+                            <input type="hidden" name="input-seguridad24" value="No"/>
+                            <input type="checkbox" name="input-seguridad24" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -491,7 +590,8 @@ include '../../crud.php';
                             <a>Una sola planta</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-unaplanta"></input>
+                            <input type="hidden" name="input-unaplanta" value="No"/>
+                            <input type="checkbox" name="input-unaplanta" value="Si"/>
                         </div>
                     </div>
                 </div>
@@ -503,7 +603,8 @@ include '../../crud.php';
                             <a>Se aceptan mascotas</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-mascotas"></input>
+                            <input type="hidden" name="input-mascotas" value="No"/>
+                            <input type="checkbox" name="input-mascotas" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -511,7 +612,8 @@ include '../../crud.php';
                             <a>Prohibido fumar</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-fumar"></input>
+                            <input type="hidden" name="input-fumar" value="No"/>
+                            <input type="checkbox" name="input-fumar" value="Si"/>
                         </div>
                     </div>                 
                 </div>
@@ -523,7 +625,8 @@ include '../../crud.php';
                             <a>Alberca</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-alberca"></input>
+                            <input type="hidden" name="input-alberca" value="No"/>
+                            <input type="checkbox" name="input-alberca" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -531,7 +634,8 @@ include '../../crud.php';
                             <a>Área de juegos infantiles</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-niños"></input>
+                            <input type="hidden" name="input-niños" value="No"/>
+                            <input type="checkbox" name="input-niños" value="Si"/>
                         </div>
                     </div> 
                     <div class="container-checkbox">
@@ -539,7 +643,8 @@ include '../../crud.php';
                             <a>Cancha de tenis</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-teniscancha"></input>
+                            <input type="hidden" name="input-teniscancha" value="No"/>
+                            <input type="checkbox" name="input-teniscancha" value="Si"/>
                         </div>
                     </div>    
                     <div class="container-checkbox">
@@ -547,7 +652,8 @@ include '../../crud.php';
                             <a>Gimnasio</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-gimnasio"></input>
+                            <input type="hidden" name="input-gimnasio" value="No"/>
+                            <input type="checkbox" name="input-gimnasio" value="Si"/>
                         </div>
                     </div>
                     <div class="container-checkbox">
@@ -555,7 +661,8 @@ include '../../crud.php';
                             <a>Jacuzzi</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-jacuzzi"></input>
+                            <input type="hidden" name="input-jacuzzi" value="No"/>
+                            <input type="checkbox" name="input-jacuzzi" value="Si"/>
                         </div>
                     </div>  
                     <div class="container-checkbox">
@@ -563,7 +670,8 @@ include '../../crud.php';
                             <a>Salón de usos múltiples</a>
                         </div>
                         <div class="div-checkbox">
-                            <input type="checkbox" name="input-usos"></input>
+                            <input type="hidden" name="input-usos" value="No"/>
+                            <input type="checkbox" name="input-usos" value="Si"/>
                         </div>
                     </div>           
                 </div>
@@ -577,7 +685,7 @@ include '../../crud.php';
                 <h2 id="dragText">Arrastra y suelta imágenes</h2>
                 <span>O</span>
                 <!-- <button type="button" id="seleccionar-pics">Selecciona tus archivos</button> -->
-                <input type="file" name="input-file[]" id="input-file" multiple>
+                <input required type="file" name="input-file[]" id="input-file" accept=".jpg, .jpeg, .png" multiple>
             </div>
             <div id="preview" name="preview">
 
