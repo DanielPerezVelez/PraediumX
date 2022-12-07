@@ -1,0 +1,44 @@
+.cartas {
+    justify-content: center;
+    padding: 40px;
+    margin-left: 40px;
+
+}
+
+.carta {
+    background: #f5f6fa;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+
+
+}
+
+.box {
+    margin:0 auto;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 2);
+    margin-bottom: 20px;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carta:hover {
+    transform: scale(1.2, 1.2);
+}
+.contenedor-usuarios{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
