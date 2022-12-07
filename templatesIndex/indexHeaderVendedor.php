@@ -75,7 +75,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="php/perfil-system/perfil.php">Mi perfil</a> 
                         <a class="collapse-item" href="php/modulos/vendedor/buzon.php">Buzon</a>
-                        <a class="collapse-item" href="php/modulos/vendedor/propiedades.php">Propiedades</a>
+                        <a class="collapse-item" href="php/modulos/vendedor/propiedades.php">Mis propiedades</a>
                         <a class="collapse-item" href="php/modulos/vendedor/añadirProp.php">Añadir propiedad</a>
                     </div>
                 </div>
@@ -270,7 +270,7 @@
                                     ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
-                                src="img/<?php echo $profilePic;?>">
+                                src="img/perfilIMG/<?php echo $profilePic;?>">
                             </a>
                             <!-- Dropdown - User Information -->
                         </li>

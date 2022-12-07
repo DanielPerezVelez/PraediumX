@@ -68,50 +68,12 @@
   overflow-y: auto;
 }
 
-.select-box .options-container.active + .selected::after {
-  transform: rotateX(180deg);
-  top: -6px;
-}
-
-.select-box .options-container::-webkit-scrollbar {
-  width: 8px;
-  background: #0d141f;
-  border-radius: 0 8px 8px 0;
-}
-
-.select-box .options-container::-webkit-scrollbar-thumb {
-  background: #525861;
-  border-radius: 0 8px 8px 0;
-}
-
-.select-box .option,
-.selected {
-  padding: 4px 24px;
-  cursor: pointer;
-}
-.select-box .option:hover {
-  transition: all 400ms;
-  background: #f5f6fa;
-  color: #0d141f;
-}
-
-.select-box label {
-  cursor: pointer;
-  width: 100%;
-  margin: 0;
-}
-
-.select-box .option .radio {
-  display: none;
-}
-
 .tarjetapropiedad{
   width: 100%;
   display: flex;
   max-width: 1100px;
 }
 .card{
-  width: 33%;
   margin: 20px;
   border-radius: 6px;
   overflow: hidden;
@@ -120,8 +82,17 @@
   transition: all 400ms ease;
 }
 
-.card:hover{
- box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+.select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 8px 8px 0;
+}
+
+.card .imagen {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: flex-end;
 }
 
 .card .imagen {
@@ -172,10 +143,19 @@
   padding: 0px 10px;
   align-items: flex-end;
 }
+
+.contenedor-servicios div span{
+  margin-right: 5px;
+}
+.contenedor-propiedades{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
 .div-addProp{
   margin-top: 10px;
   margin-left: 580px;
 }
 .button-addProp{
-  border-color: green;
+  border-color: #2b91df;
 }

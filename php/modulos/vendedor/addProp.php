@@ -157,7 +157,7 @@ if (isset($_POST['guardar'])){
             }
             //Query de INSERT propiedad
             $queryProp= "INSERT INTO inmueble(titulo,descripcion,precio,recamaras,
-            baños,medios_baños,estacionamientos,construccion,terreno,largoter,anchoter,añoconst,
+            toilet,medios_baños,estacionamientos,construccion,terreno,largoter,anchoter,añoconst,
             numero_pisos,piso_ubicacion,clave,codigo,idpais,idestado,ciudad,calle,esquina,cp,idcliente,
             idop,idtipin,idservext,idservgen,idservrecrea,idrestric) 
             VALUES

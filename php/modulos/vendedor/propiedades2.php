@@ -3,18 +3,10 @@ session_start();
 $rol=$_SESSION['rol'];
 include '../../../templates/headerVendedor.php';
 include '../../crud.php';
+$idcliente=$_SESSION['idcliente'];
 ?>
 <div class="container h-100">
-    <div style="display:flex;" >
-        <h1>Mis Propiedades</h1>
-        <div class="div-addProp">
-            <a href="añadirProp.php">
-                <button id="button-addProp" class="button-addProp">
-                    Agregar Propiedad
-                </button>
-            </a> 
-        </div>
-    </div>   
+    <h1>Propiedades</h1>
     <div>
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             <div class="container">
@@ -40,12 +32,12 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../../js/scriptsVendedor/animation.js"></script>
+                <script src="../../../js/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
                     <div id="seleted1" class="selected">
-                        Operación
+                        Estados
                         <i id="caret-down" class="ms-2 fa-solid fa-caret-down"></i>
                     </div>
                     <div class="select-box">
@@ -61,18 +53,10 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../../js/scriptsVendedor/animation.js"></script>
+                <script src="../../../js/animation.js"></script>
             </div>
-            <div class="container">
-                <div class="container-options">
-                    <a href="filtrarProp.php">
-                        <button id="seleted1" class="selected">
-                            Filtrar
-                        </button>
-                    </a>
-                </div>
-                <script src="../../../js/scriptsVendedor/animation.js"></script>
-            </div>
+
+
         </nav>
         <div>
             <?php
@@ -92,11 +76,19 @@ include '../../crud.php';
              $paginas=ceil($num_registros/$registros);
             ?>
             <div class="contenedor-propiedades">
-                <?php while ($propiedad = mysqli_fetch_assoc($busqueda)) { ?>
+                <?php while ($propiedad = mysqli_fetch_assoc($busqueda)) {
+                    $idInm=$propiedad['idinm'];
+                    $a="SELECT * FROM fotosProp WHERE idinm='$idInm'";
+                    $aa=mysqli_query($conexion,$a);
+                    while($fotoProp=mysqli_fetch_assoc($aa)){
+                        $imagenn=$fotoProp['imagen'];
+                        echo $imagenn;
+                    }
+                ?>
                     <div class="tarjetapropiedad">
                         <div class="card">
                             <a href="#" class="imagen">
-                                <img src="../../../img/casa3.jpg">
+                                <img src="../../../img/casasIMG/<?php echo $imagenn;?>">
                                 <div class="precio d-flex position-absolute">
                                     <h3> $<?php echo number_format($propiedad['precio']); ?> </h3>
                                     <span><?php echo $propiedad['idestado']; ?></span>
@@ -118,31 +110,31 @@ include '../../crud.php';
                 <?php } ?>
             </div>
             <div class="container-fluid  col-12">
-                <ul class="pagination pg-dark justify-content-center pb-5 pt-5 mb-0" style="float: none;" >
-                    <li class="page-item">
-                    <?php
-                    if($_REQUEST["nume"] == "1" ){
-                        $_REQUEST["nume"] == "0";
-                        echo  "";
-                    }else{
-                    if ($pagina>1)
-                    $ant = $_REQUEST["nume"] - 1;
-                    echo "<a class='paginacion page-link' aria-label='Previous' href='propiedades.php?nume=1'><span aria-hidden='true'>&laquo;</span><span class='sr-only'>Previous</span></a>"; 
-                    echo "<li class='page-item '><a class='page-link' href='propiedades.php?nume=". ($pagina-1) ."' >".$ant."</a></li>"; }
-                    echo "<li class='page-item active'><a class='page-link' >".$_REQUEST["nume"]."</a></li>"; 
-                    $sigui = $_REQUEST["nume"] + 1;
-                    $ultima = $num_registros / $registros;
-                    if ($ultima == $_REQUEST["nume"] +1 ){
-                        $ultima == "";}
-                    if ($pagina<$paginas && $paginas>1)
-                    echo "<li class='page-item'><a class='page-link' href='propiedades.php?nume=". ($pagina+1) ."'>".$sigui."</a></li>"; 
-                    if ($pagina<$paginas && $paginas>1)
-                    echo "
-                    <li class='page-item'><a class='page-link' aria-label='Next' href='propiedades.php?nume=". ceil($ultima) ."'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>Next</span></a>
-                    </li>";
-                    ?>
-                </ul>
-            </div>
+        <ul class="pagination pg-dark justify-content-center pb-5 pt-5 mb-0" style="float: none;" >
+            <li class="page-item">
+            <?php
+            if($_REQUEST["nume"] == "1" ){
+            $_REQUEST["nume"] == "0";
+            echo  "";
+            }else{
+            if ($pagina>1)
+            $ant = $_REQUEST["nume"] - 1;
+            echo "<a class='paginacion page-link' aria-label='Previous' href='propiedades2.php?nume=1'><span aria-hidden='true'>&laquo;</span><span class='sr-only'>Previous</span></a>"; 
+            echo "<li class='page-item '><a class='page-link' href='propiedades2.php?nume=". ($pagina-1) ."' >".$ant."</a></li>"; }
+            echo "<li class='page-item active'><a class='page-link' >".$_REQUEST["nume"]."</a></li>"; 
+            $sigui = $_REQUEST["nume"] + 1;
+            $ultima = $num_registros / $registros;
+            if ($ultima == $_REQUEST["nume"] +1 ){
+            $ultima == "";}
+            if ($pagina<$paginas && $paginas>1)
+            echo "<li class='page-item'><a class='page-link' href='propiedades2.php?nume=". ($pagina+1) ."'>".$sigui."</a></li>"; 
+            if ($pagina<$paginas && $paginas>1)
+            echo "
+            <li class='page-item'><a class='page-link' aria-label='Next' href='propiedades2.php?nume=". ceil($ultima) ."'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>Next</span></a>
+            </li>";
+            ?>
+        </ul>
+    </div>
         </div>
     </div>
 </div>
