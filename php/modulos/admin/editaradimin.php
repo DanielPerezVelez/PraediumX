@@ -28,7 +28,7 @@ if (!isset($_SESSION['usermail'])) {
     <div class="editar-Perfil d-flex">
         <div>
             <div class=" d-flex justify-content-center flex-column flex-grow">
-                <div class="editar-foto-perfil">
+                <div class="box">
                     <img src="../../../img/perfilIMG/<?php echo $profilePic; ?>" width=280 height=280 />
                 </div>
                 <button class="adjuntar-archivo">

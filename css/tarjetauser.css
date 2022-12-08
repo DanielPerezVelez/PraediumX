@@ -43,7 +43,26 @@
     grid-template-columns: repeat(4,1fr);
   }
 
-  /* Esto es CSS para el perfil de Usuarios */
+
+  /* foto de perfil de usuario  */
+  .foto-perfil{
+    margin:0 auto;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+  /* Aqui termina */
 
   .carta2 {
     background: #f5f6fa;

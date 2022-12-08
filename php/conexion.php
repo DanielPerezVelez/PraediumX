@@ -8,5 +8,5 @@ function conectarDB() : mysqli {
         echo "error";
         exit;
     }
-    return $conexion;   
+    return $conexion;    
 }
