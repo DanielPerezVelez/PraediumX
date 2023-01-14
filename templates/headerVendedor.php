@@ -12,20 +12,25 @@
     <!-- Custom fonts for this template-->
     <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/6.2.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
     <!-- Custom styles for this template-->
-    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../css/cssVendedor/app.css">
-    <link rel="stylesheet" href="../../../css/cssVendedor/añadirProp.css">
+    <link href="../../../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/cssVendedor/añadirProp.css">
+    <link rel="stylesheet" href="../../../../css/app.css">
+    <link rel="stylesheet" href="../../../../css/ppropiedades.css">
+    <link rel="stylesheet" href="../../../../css/tarjetauser.css">
 </head>
 
 <body id="page-top">
 <?php 
-    require_once("../../conexion.php");
-    require_once("../../funciones.php");
+    if(!isset($_SESSION['usermail'])){  
+        header("location: ../../../login-system/loginScreen.php");
+    }
+    require_once("../../../conexion.php");
+    require_once("../../../funciones.php");
     
     $id=$_SESSION['idcliente'];
     $nameClient=$_SESSION['nombres'];
@@ -39,7 +44,7 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion colorprincipal" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../../index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../../../index.php">
                 <div class="sidebar-brand-icon">
                     <i class="fa-solid fa-building"></i>
                 </div>
@@ -51,7 +56,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="../../../index.php">
+                <a class="nav-link" href="../../../../index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tablero</span>
                 </a>
@@ -74,10 +79,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">  
-                        <a class="collapse-item" href="../../perfil-system/perfil.php">Mi perfil</a>
+                        <a class="collapse-item" href="../../../../php/modulos/vendedor/perfil/perfil.php">Mi perfil</a>
                         <a class="collapse-item" href="buzon.php">Buzon</a>
-                        <a class="collapse-item" href="propiedades.php">Mis propiedades</a>
-                        <a class="collapse-item" href="añadirProp.php">Añadir propiedad</a>
+                        <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/prueba3.php">Mis propiedades</a>
+                        <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/añadirProp.php">Añadir propiedad</a>
                     </div>
                 </div>
             </li>
@@ -110,7 +115,7 @@
             </li>
                 <!-- Nav Item - Cerrar Sesion -->
             <li class="nav-item cerrar-sesion">
-                <a class="nav-link" href="../../login-system/logoutClient.php" >
+                <a class="nav-link" href="../../../login-system/logoutClient.php" >
                     <i class="fa-solid fa-xmark"></i>   
                     <span>Cerrar Sesion</span>
                 </a>
@@ -222,7 +227,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../../img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="../../../../img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -234,7 +239,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../../img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="../../../../img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -246,7 +251,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../../img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="../../../../img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -264,14 +269,14 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a href="../../perfil-system/perfil.php" class="nav-link dropdown-toggle">
+                            <a href="../../../../php/modulos/vendedor/perfil/perfil.php" class="nav-link dropdown-toggle">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <?php
                                     echo $nameClient;
                                     ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
-                                src="../../../img/perfilIMG/<?php echo $profilePic;?>">
+                                src="../../../../img/perfilIMG/<?php echo $profilePic;?>">
                             </a>
                             <!-- Dropdown - User Information -->
                         </li>
@@ -280,3 +285,4 @@
                 <!-- End of Topbar -->
             </div>
             <!-- End of Main Content -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

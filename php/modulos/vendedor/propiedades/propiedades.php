@@ -1,8 +1,9 @@
 <?php
 session_start();
 $rol=$_SESSION['rol'];
-include '../../../templates/headerVendedor.php';
-include '../../crud.php';
+include '../../../../templates/headerVendedor.php';
+// include '../../crud.php';
+$idcliente=$_SESSION['idcliente'];
 ?>
 <div class="container h-100">
     <div style="display:flex;" >
@@ -40,7 +41,7 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../../js/scriptsVendedor/animation.js"></script>
+                <script src="../../../../js/scriptsVendedor/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
@@ -61,7 +62,7 @@ include '../../crud.php';
                         </div>
                     </div>
                 </div>
-                <script src="../../../js/scriptsVendedor/animation.js"></script>
+                <script src="../../../../js/scriptsVendedor/animation.js"></script>
             </div>
             <div class="container">
                 <div class="container-options">
@@ -71,7 +72,7 @@ include '../../crud.php';
                         </button>
                     </a>
                 </div>
-                <script src="../../../js/scriptsVendedor/animation.js"></script>
+                <script src="../../../../js/scriptsVendedor/animation.js"></script>
             </div>
         </nav>
         <div>
@@ -96,7 +97,7 @@ include '../../crud.php';
                     <div class="tarjetapropiedad">
                         <div class="card">
                             <a href="#" class="imagen">
-                                <img src="../../../img/casa3.jpg">
+                                <img src="../../../../img/casa3.jpg">
                                 <div class="precio d-flex position-absolute">
                                     <h3> $<?php echo number_format($propiedad['precio']); ?> </h3>
                                     <span><?php echo $propiedad['idestado']; ?></span>
@@ -107,7 +108,7 @@ include '../../crud.php';
                                 <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i> <?php echo $propiedad['ciudad']; ?></p>
                                 <hr class="sidebar-divider">
                                 <div class="contenedor-servicios d-flex justify-content-around">
-                                    <div><span><?php echo $propiedad['toilet']; ?></span><i class="fa-solid fa-shower"></i></div>
+                                    <div><span><?php echo $propiedad['baños']; ?></span><i class="fa-solid fa-shower"></i></div>
                                     <div><i class="fas fa-vector-square"></i><span></span><?php echo $propiedad['terreno']; ?>m<sup>2</sup></div>
                                     <div><span><?php echo $propiedad['recamaras']; ?></span><i class="fas fa-bed padding-2"></i></sup></div>
 
@@ -147,5 +148,5 @@ include '../../crud.php';
     </div>
 </div>
 <?php
-include '../../../templates/footer.php';
+include '../../../../templates/footer.php';
 ?>

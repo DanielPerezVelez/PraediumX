@@ -9,6 +9,10 @@
     position:absolute;
     margin-left: 300px;
 }
+.div-inputFile{
+    position:absolute;
+    margin-left: 0px;
+}
 .div-b{
     margin-top: 35px;
 }

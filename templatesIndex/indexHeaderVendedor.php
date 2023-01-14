@@ -61,7 +61,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Interfaz
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -73,10 +73,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="php/perfil-system/perfil.php">Mi perfil</a> 
+                        <a class="collapse-item" href="php/modulos/vendedor/perfil/perfil.php">Mi perfil</a> 
                         <a class="collapse-item" href="php/modulos/vendedor/buzon.php">Buzon</a>
-                        <a class="collapse-item" href="php/modulos/vendedor/propiedades.php">Mis propiedades</a>
-                        <a class="collapse-item" href="php/modulos/vendedor/añadirProp.php">Añadir propiedad</a>
+                        <a class="collapse-item" href="php/modulos/vendedor/propiedades/propiedades2.php">Mis propiedades</a>
+                        <a class="collapse-item" href="php/modulos/vendedor/propiedades/añadirProp.php">Añadir propiedad</a>
                     </div>
                 </div>
             </li>
@@ -221,7 +221,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../../img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -233,7 +233,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../../img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -245,7 +245,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../../../img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -263,7 +263,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a href="php/perfil-system/perfil.php" class="nav-link dropdown-toggle">
+                            <a href="php/modulos/vendedor/perfil/perfil.php" class="nav-link dropdown-toggle">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <?php
                                     echo $nameClient;
