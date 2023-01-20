@@ -81,7 +81,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">  
                         <a class="collapse-item" href="../../../../php/modulos/vendedor/perfil/perfil.php">Mi perfil</a>
                         <a class="collapse-item" href="buzon.php">Buzon</a>
-                        <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/prueba3.php">Mis propiedades</a>
+                        <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/propiedades2.php">Mis propiedades</a>
                         <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/añadirProp.php">Añadir propiedad</a>
                     </div>
                 </div>
