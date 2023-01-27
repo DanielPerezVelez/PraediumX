@@ -26,7 +26,7 @@ $conexion= conectarDB();
                 </div>
                 <div class="div-profile-info"> 
                     <div class="div-name">
-                        <a><?php echo "$nombreCliente $apellidosCliente"; ?></a>
+                        <h5><?php echo "$nombreCliente $apellidosCliente"; ?></h5>
                     </div>
                     <div class="div-rol">
                         <i class="fa-solid fa-cart-shopping"></i>

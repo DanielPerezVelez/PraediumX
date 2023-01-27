@@ -18,7 +18,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/cssVendedor/app.css">
+    <!-- css complementario de la plantilla sb-admin-2 -->
+    <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body id="page-top">
@@ -73,9 +74,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="php/modulos/vendedor/perfil/perfil.php">Mi perfil</a> 
+                        <a class="collapse-item" href="php/modulos/vendedor/perfil/miPerfil.php">Mi perfil</a> 
                         <a class="collapse-item" href="php/modulos/vendedor/buzon.php">Buzon</a>
-                        <a class="collapse-item" href="php/modulos/vendedor/propiedades/propiedades2.php">Mis propiedades</a>
+                        <a class="collapse-item" href="php/modulos/vendedor/propiedades/miPropiedades2.php">Mis propiedades</a>
                         <a class="collapse-item" href="php/modulos/vendedor/propiedades/añadirProp.php">Añadir propiedad</a>
                     </div>
                 </div>
@@ -263,7 +264,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a href="php/modulos/vendedor/perfil/perfil.php" class="nav-link dropdown-toggle">
+                            <a href="php/modulos/vendedor/perfil/miPerfil.php" class="nav-link dropdown-toggle">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <?php
                                     echo $nameClient;

@@ -73,11 +73,6 @@ $idcliente = $_SESSION['idcliente'];
                 <?php while ($propiedad = mysqli_fetch_assoc($busqueda)) {
                     $idInm = $propiedad['idinm'];
                     $idOp = $propiedad['idop'];
-                    // $a="SELECT * FROM fotosProp WHERE idinm='$idInm'";
-                    // $aa=mysqli_query($conexion,$a);
-                    // while($fotoProp=mysqli_fetch_assoc($aa)){
-                    //     $imagenn=$fotoProp['imagen'];
-                    // }
                     $selectFotosProp = "SELECT * FROM fotosprop WHERE idinm='$idInm'";
                     $resultFotosProp = mysqli_query($conexion, $selectFotosProp);
         
@@ -90,7 +85,7 @@ $idcliente = $_SESSION['idcliente'];
                     ?>
                     <div class="tarjetapropiedad">
                         <div class="card" style="width:100%;">
-                            <a href="inmueble.php?idinm=<?php echo $idInm; ?>" class="imagen">
+                            <a href="miInmueble.php?idinm=<?php echo $idInm; ?>" class="imagen">
                                 <img src="../../../../img/casasIMG/<?php echo $firstPic[0]; ?>">
                                 <div class="precio d-flex position-absolute">
                                     <h3> $
@@ -107,7 +102,7 @@ $idcliente = $_SESSION['idcliente'];
                                 </div>
                             </a>
                             <div class="contenido">
-                                <a href="inmueble.php?idinm=<?php echo $idInm; ?>"><?php echo $propiedad['titulo']; ?></a>
+                                <a href="miInmueble.php?idinm=<?php echo $idInm; ?>"><?php echo $propiedad['titulo']; ?></a>
                                 <p class="fw-bold"><i class="fa-solid fa-map-location-dot"></i>
                                     <?php echo $propiedad['ciudad']; ?>
                                 </p>

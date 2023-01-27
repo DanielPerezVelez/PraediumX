@@ -185,12 +185,8 @@ $idcliente=$_SESSION['idcliente'];
                         <!-- <h2 id="dragText">Arrastra y suelta imágenes</h2>
                         <span>O</span> -->
                         <!-- <button type="button" id="seleccionar-pics">Selecciona tus archivos</button> -->
-                        <h5> Sube una foto de tu propiedad para la publicación.</h5>
-                        <input required type="file" name="input-file1" id="input-file1" accept=".jpg, .jpeg, .png">
-
-                        <br><br><br><br>
                         <h5> ¡Agrega más fotos de tu propiedad para hacerla más interesante!</h5>                    
-                        <input required type="file" name="input-file[]" id="input-file" accept=".jpg, .jpeg, .png" multiple>
+                        <input required type="file" name="input-file[]" id="input-file" accept=".jpg, .jpeg" multiple>
                     </div>
                 </div>
             </div>

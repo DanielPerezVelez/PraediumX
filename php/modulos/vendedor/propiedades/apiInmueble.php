@@ -80,3 +80,46 @@ while ($row = $resultRestr->fetch_assoc()) {
     $rMascotas=$row['mascotas'];
     $rFumar=$row['fumar'];
 }
+
+$selectInmueble = "SELECT * FROM inmueble WHERE idinm='$idinm'";
+$resultInmueble = mysqli_query($conexion, $selectInmueble);
+
+while ($propiedad = mysqli_fetch_assoc($resultInmueble)) {
+    $idInm = $propiedad['idinm'];
+    $titulo = $propiedad['titulo'];
+    $descripcion = $propiedad['descripcion'];
+    $precio = $propiedad['precio'];
+    $recamaras = $propiedad['recamaras'];
+    $baños = $propiedad['baños'];
+    $medban = $propiedad['medios_baños'];
+    $estacionamientos = $propiedad['estacionamientos'];
+    $construccion = $propiedad['construccion'];
+    $terreno = $propiedad['terreno'];
+    $numpis = $propiedad['numero_pisos'];
+    $ciudad = $propiedad['ciudad'];
+    $direccion = $propiedad['direccion'];
+
+    $idPais = $propiedad['idpais'];
+    $idOp = $propiedad['idop'];
+}
+//Inner join para mostrar el estado del inmueble
+$selectEstado = "SELECT *
+FROM inmueble INNER JOIN estados
+ON inmueble.idestado = estados.idestado WHERE idinm='$idinm'";
+
+$resultadoEstado = mysqli_query($conexion, $selectEstado);
+while ($row = $resultadoEstado->fetch_assoc()) {
+    $nombrestado = $row['nombre'];
+}
+//Inner join para mostrar info del propietario
+$selectInfoCliente = "SELECT *
+FROM inmueble INNER JOIN cliente
+ON inmueble.idcliente = cliente.idcliente WHERE idinm='$idinm'";
+
+$resultadoInfoCliente = mysqli_query($conexion, $selectInfoCliente);
+while ($row = $resultadoInfoCliente->fetch_assoc()) {
+    $nombres = $row['nombres'];
+    $apellidos = $row['apellidos'];
+    $correo = $row['correo'];
+    $profilepic = $row['profilepic'];
+}

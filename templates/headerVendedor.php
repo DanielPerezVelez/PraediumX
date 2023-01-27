@@ -18,10 +18,15 @@
     
     <!-- Custom styles for this template-->
     <link href="../../../../css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- css para el módulo "Añadir propiedad" -->
     <link rel="stylesheet" href="../../../../css/cssVendedor/añadirProp.css">
+    <!-- css para el popup del módulo "Inmueble" -->
+    <link rel="stylesheet" href="../../../../css/cssVendedor/miInmueble.css">
+    <!-- css para el módulo de mi perfil -->
+    <link rel="stylesheet" href="../../../../css/cssVendedor/miPerfil.css">
+    <!-- css complementario de la plantilla sb-admin-2 -->
     <link rel="stylesheet" href="../../../../css/app.css">
-    <link rel="stylesheet" href="../../../../css/ppropiedades.css">
-    <link rel="stylesheet" href="../../../../css/tarjetauser.css">
+    
 </head>
 
 <body id="page-top">
@@ -79,9 +84,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">  
-                        <a class="collapse-item" href="../../../../php/modulos/vendedor/perfil/perfil.php">Mi perfil</a>
+                        <a class="collapse-item" href="../../../../php/modulos/vendedor/perfil/miPerfil.php">Mi perfil</a>
                         <a class="collapse-item" href="buzon.php">Buzon</a>
-                        <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/propiedades2.php">Mis propiedades</a>
+                        <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/miPropiedades2.php">Mis propiedades</a>
                         <a class="collapse-item" href="../../../../php/modulos/vendedor/propiedades/añadirProp.php">Añadir propiedad</a>
                     </div>
                 </div>
@@ -269,7 +274,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a href="../../../../php/modulos/vendedor/perfil/perfil.php" class="nav-link dropdown-toggle">
+                            <a href="../../../../php/modulos/vendedor/perfil/miPerfil.php" class="nav-link dropdown-toggle">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                                     <?php
                                     echo $nameClient;
@@ -285,4 +290,3 @@
                 <!-- End of Topbar -->
             </div>
             <!-- End of Main Content -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

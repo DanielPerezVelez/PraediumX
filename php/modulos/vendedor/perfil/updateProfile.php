@@ -23,8 +23,7 @@ $_SESSION['ciudadorigen']=$cdo;
 $_SESSION['sexo']=$sexo;
 $_SESSION['anionac']=$adn;
 $_SESSION['nacionalidad']=$nacionalidad;
-sleep(1);
-header("location: perfil.php");
+header("location: miPerfil.php");
 //FIN DE ACTUALIZAR DATOS
 //INICIO DE ACTUALIZAR FOTO DE PERFIL
 if (isset($_POST['submit']) && isset($_FILES['uploadImage'])){
@@ -38,7 +37,7 @@ if (isset($_POST['submit']) && isset($_FILES['uploadImage'])){
     if ($error===0){
         if ($img_size > 1400000){
             $em="It's too big!";
-            header("Location: perfil.php?error=$em");
+            header("Location: miPerfil.php?error=$em");
         }else{
             $img_ex=pathinfo($img_name, PATHINFO_EXTENSION);
             $img_ex_lc=strtolower($img_ex);
@@ -55,12 +54,12 @@ if (isset($_POST['submit']) && isset($_FILES['uploadImage'])){
                 mysqli_query($conexion,$query);         
             }else{
                 $em="Not valid file type!";
-                header("Location: perfil.php?error=$em");
+                header("Location: miPerfil.php?error=$em");
             }
         }
     }else{
         $em="unknown error ocurred!";
-        header("Location: perfil.php?error=$em");
+        header("Location: miPerfil.php?error=$em");
     }
 }else{
     header("Location: ../index1.php");

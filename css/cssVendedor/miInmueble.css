@@ -97,3 +97,62 @@
     left: 0;
     cursor: pointer;
 }
+/*Esto ya es mi codigo*/
+.popup-image{
+    position: fixed;
+    top:0; left:0;
+    background: rgba(0,0,0,.9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.popup-image span{
+    position: absolute;
+    top:0; right:10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.popup-image img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    width: 750px;
+    object-fit: cover;
+}
+
+.image-carousel{
+    cursor: zoom-in;
+    transition: .2s linear;
+}
+
+.image-carousel:hover{
+    transform: scale(1.1);
+
+}
+
+.h4-operation{
+    margin-left: 300px;
+    color: #777777;
+}
+
+.amenidades-container i{
+    color: #2b91df;
+}
+
+.caract-container i{
+    color: #2b91df;
+}
+
+@media (max-width:768px){
+    .container .popup-image img{
+        width: 95%;
+    }
+}

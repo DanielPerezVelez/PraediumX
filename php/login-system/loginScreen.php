@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>Login y Registro</title>
-    <link rel="stylesheet" href="../../css/estilos.css"/>
+    <link rel="stylesheet" href="../../css/loginScreen.css"/>
     <script defer src="../../js/scriptsLogin/scriptEmptyFields.js"></script>
 </head>
 <body>
@@ -119,7 +119,7 @@
             </div>
         </div>
     </main>
-    <script src="../../js/scriptsLogin/script.js"></script>
+    <script src="../../js/scriptsLogin/loginScreen.js"></script>
     <!--<script src="js/scriptEmptyFields.js"></script>-->
 </body>
 </html>
