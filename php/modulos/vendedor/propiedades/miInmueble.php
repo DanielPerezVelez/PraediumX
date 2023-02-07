@@ -14,7 +14,12 @@ require "apiInmueble.php";
                 <h2>
                     <?php echo $titulo; ?>
                 </h2>
-                <Button class="btn btn-outline-info my-4"><i class="fa-solid fa-pencil"></i> Editar</Button>
+                <div>
+                    <a href="editarProp.php?idinm=<?php echo $idinm; ?>">
+                        <Button class="btn btn-outline-info my-4"><i class="fa-solid fa-pencil"></i> Editar</Button>
+                    </a>
+                    <Button class="btn btn-outline-danger my-4"><i class="fa-solid fa-trash-can"></i></Button>
+                </div>               
             </div>
             <div class="d-flex justify-content-center width='100%' height='100%'">
                 <div>
@@ -493,6 +498,7 @@ require "apiInmueble.php";
                         }
                         ?>
                     </div>
+                    <br>
                 </div>
             </div>
         </div>
@@ -500,7 +506,9 @@ require "apiInmueble.php";
             <div class="container position-relative">
                 <div class="d-flex justify-content-center">
                     <div class="contacto">
-                        <img src="../../../../img/perfilIMG/<?php echo $profilepic; ?>" alt="">
+                        <a href="../../../../php/modulos/vendedor/perfil/miPerfil.php">
+                            <img src="../../../../img/perfilIMG/<?php echo $profilepic; ?>" alt="">
+                        </a>
                     </div>
                 </div>
                 <h3 class=" pt-3" style="text-align: center;">CONTACTO</h3>

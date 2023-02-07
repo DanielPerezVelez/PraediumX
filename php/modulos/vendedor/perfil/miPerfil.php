@@ -72,27 +72,28 @@ $conexion= conectarDB();
                     <div class="d-flex flex-column align-content-center">
                         <form action="editarPerfil.php" method="POST">
                             <br>
-                            <button class="d-block btn btn-info mb-2"><i class="fa-solid fa-pencil"></i>Editar perfil</button>
+                            <button class="d-block btn btn-info mb-2"><i class="fa-solid fa-pencil"></i> Editar perfil</button>
                             <br>
                         </form>
                         <form action="guardados.php" method="POST">
-                            <button class="btn btn-info mb-2"><i class="fa-solid fa-floppy-disk"></i>Guardados</button>
+                            <button class="btn btn-info mb-2"><i class="fa-solid fa-floppy-disk"></i> Guardados</button>
                             <br><br>
                         </form>
                         <form action="interesantes.php" method="POST">
-                            <button class="btn btn-info mb-2"><i class="fa-solid fa-star"></i>Interesantes</button>
+                            <button class="btn btn-info mb-2"><i class="fa-solid fa-star"></i> Interesantes</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
         <div id="content-wrapper" class="informacion-Perfil container">
-            <div id="info-conf" class="divinfo">
-                <div class="div-info">
+            <div id="info-conf" class="divinfo"><!-- Useless -->
+                <div class="div-info"><!-- Useless -->
                     <div class="div-form-aboutme">
                         <div class="mb-3">
                             <h2 class="text-info"><i class="fa-solid fa-user"></i> Acerca de mi</h2>
-                            <p class="form-control border">
+                            <br>
+                            <p class="form-control border" style="width: 100%; height: 100%;">
                                 <?php
                                     if($_SESSION['aboutme']==''){
                                         echo "Escribe algo sobre ti...";
@@ -101,7 +102,6 @@ $conexion= conectarDB();
                                     }
                                 ?>
                             </p>
-                            <br>
                         </div>
                         <br>
                         <div class="mb-3">
