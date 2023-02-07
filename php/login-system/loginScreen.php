@@ -37,8 +37,8 @@
                 ?>
                 <form action="loginClient.php" method="POST" class="formulario_login">
                     <h2>Iniciar Sesion</h2>
-                    <input required type="text" placeholder="Correo" name="loginCorreo" maxlength="80">
-                    <input required type="password" placeholder="Contraseña" name="loginPassword" maxlength="10">
+                    <input required type="text" placeholder="Correo:" name="loginCorreo" maxlength="80">
+                    <input required type="password" placeholder="Contraseña:" name="loginPassword" maxlength="10" minlength="7">
                     <div class="divBtnFoLo">
                         <button id="btnFoLo"> Entrar </button>
                     </div>
@@ -62,13 +62,13 @@
                     <h2>Registrarse</h2>
                     <div>
                         <!-- Div que contienen los input -->
-                        <input required type="text" placeholder="Nombre(s):" class="registerNombreClass" name="registerNombres" maxlength="80">
+                        <input required type="text" pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+" placeholder="Nombre(s):" class="registerNombreClass" name="registerNombres" maxlength="80" minlength="2" title="Números no permitidos. Ingrese sólo letras.">
                         <!-- input para nombre -->
-                        <input required type="text" placeholder="Apellido(s):" class="registerApellidoClass" name="registerApellidos" maxlength="100">
+                        <input required type="text" pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+" placeholder="Apellido(s):" class="registerApellidoClass" name="registerApellidos" maxlength="100" minlength="2" title="Números no permitidos. Ingrese sólo letras.">
                         <!-- input para apellido -->
-                        <input required id="inputCorreoRe" type="text" placeholder="Correo:" class="registerCorreoClass" name="registerCorreo" maxlength="80">
+                        <input required id="inputCorreoRe" type="text" pattern="[a-zA-Z0-9À-ÿ\u00f1\u00d1]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Correo:" class="registerCorreoClass" name="registerCorreo" maxlength="80" minlength="10">
                         <!-- input para correo -->
-                        <input required id="inputPasswordRe" type="password" placeholder="Contraseña:" class="registerPasswordClass" name="registerPassword" maxlength="10">
+                        <input required id="inputPasswordRe" type="password" placeholder="Contraseña:" class="registerPasswordClass" name="registerPassword" maxlength="10" minlength="7">
                         <!-- input para contraseñaD -->
                     </div>
                     <br>
