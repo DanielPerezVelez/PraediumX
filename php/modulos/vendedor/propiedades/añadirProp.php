@@ -41,19 +41,19 @@ $idcliente=$_SESSION['idcliente'];
                 <div class="div-a">
                     <a>Título del anuncio</a>
                     <div class="div-input">
-                        <input name="input-titulo"></input>
+                        <input name="input-titulo" pattern="^[a-zA-Z0-9À-ÿ\u00f1\u00d1 ]+" minlength="2" maxlength="150"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Descripción del anuncio</a>
                     <div class="div-input">
-                        <input name="input-descripcion"></input>
+                        <input name="input-descripcion" pattern="^[a-zA-Z0-9À-ÿ\u00f1\u00d1 ]+" minlength="2" maxlength="280"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Precio</a>
                     <div class="div-input">
-                        <input name="input-precio"/>
+                        <input name="input-precio" type="number" min="0" max="9999999999"/>
                     </div>               
                 </div>
                 <div class="div-a">
@@ -81,43 +81,43 @@ $idcliente=$_SESSION['idcliente'];
                 <div class="div-a">
                     <a>Recámaras</a>
                     <div class="div-input">
-                        <input name="input-recamaras"></input>
+                        <input name="input-recamaras" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Baños</a>
                     <div class="div-input">
-                        <input name="input-baños"></input>
+                        <input name="input-baños" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Medios baños</a>
                     <div class="div-input">
-                        <input name="input-medbañ"></input>
+                        <input name="input-medbañ" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Estacionamientos</a>
                     <div class="div-input">
-                        <input name="input-estacionamientos"></input>
+                        <input name="input-estacionamientos" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Construcción</a>
                     <div class="div-input">
-                        <input name="input-construccion"></input>
+                        <input name="input-construccion" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Terreno</a>
                     <div class="div-input">
-                        <input name="input-terreno"></input>
+                        <input name="input-terreno" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Número de pisos del edificio</a>
                     <div class="div-input">
-                        <input name="input-pisos"></input>
+                        <input name="input-pisos" type="number" min="0" max="99999"></input>
                     </div>               
                 </div>
                 <br><br>
@@ -167,13 +167,13 @@ $idcliente=$_SESSION['idcliente'];
                 <div class="div-a">
                     <a>Ciudad/Delegación</a>
                     <div class="div-input">
-                        <input name="input-ciudad"></input>
+                        <input name="input-ciudad" pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]+" minlength="2" maxlength="100"></input>
                     </div>               
                 </div>
                 <div class="div-a">
                     <a>Dirección</a>
                     <div class="div-input">
-                        <input name="input-direccion"></input>
+                        <input name="input-direccion" pattern="^[a-zA-Z0-9À-ÿ\u00f1\u00d1 ]+" minlength="2" maxlength="200"></input>
                     </div>               
                 </div>
 

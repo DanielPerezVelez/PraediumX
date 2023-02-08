@@ -176,7 +176,7 @@ if (isset($_POST['guardar'])) {
     $stmt = mysqli_query($conexion, $sqll);
 
   }
-  header("location: propiedades2.php");
+  header("location: miPropiedades2.php");
   //Final del proceso de addProp.php
 }
 //VALIDACIONES
